@@ -1,0 +1,17 @@
+version: 2
+updates:
+  - package-ecosystem: npm
+    directory: /
+    schedule: { interval: weekly }
+    open-pull-requests-limit: 10
+    groups:
+      nuxt: { patterns: ['nuxt', '@nuxt/*', 'nuxt-*'] }
+      vue: { patterns: ['vue', 'vue-*', '@vue/*', 'pinia', '@pinia/*', 'vee-validate'] }
+      testing: { patterns: ['vitest', '@vitest/*', '@playwright/*', '@axe-core/*', 'happy-dom'] }
+      lint: { patterns: ['eslint*', '@nuxt/eslint-config', 'prettier', 'typescript', 'vue-tsc'] }
+  - package-ecosystem: github-actions
+    directory: /
+    schedule: { interval: weekly }
+  - package-ecosystem: docker
+    directory: /
+    schedule: { interval: weekly }

@@ -1,0 +1,52 @@
+{
+  "name": "bank-portal",
+  "private": true,
+  "type": "module",
+  "packageManager": "pnpm@12.4.2",
+  "engines": {
+    "node": ">=22.19.0"
+  },
+  "scripts": {
+    "dev": "pnpm --parallel --filter \"./apps/*\" dev",
+    "dev:shell": "pnpm --filter @bank/shell dev",
+    "dev:loans": "pnpm --filter @bank/loans dev",
+    "build": "pnpm --filter \"./apps/*\" build",
+    "preview": "node scripts/preview.mjs",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "typecheck": "pnpm --filter \"./apps/*\" typecheck",
+    "test": "pnpm -r --if-present test",
+    "test:coverage": "pnpm -r --if-present test:coverage",
+    "test:e2e": "playwright test",
+    "docker:up": "docker compose up --build",
+    "prepare": "simple-git-hooks || true"
+  },
+  "simple-git-hooks": {
+    "pre-commit": "pnpm exec lint-staged",
+    "commit-msg": "node scripts/verify-commit-msg.mjs \"$1\""
+  },
+  "lint-staged": {
+    "*.{ts,mts,vue,js,mjs}": [
+      "eslint --fix",
+      "prettier --write"
+    ],
+    "*.{json,md,yml,yaml,css}": [
+      "prettier --write"
+    ]
+  },
+  "devDependencies": {
+    "@axe-core/playwright": "^4.13.0",
+    "@nuxt/eslint-config": "^1.17.0",
+    "@playwright/test": "^1.64.0",
+    "eslint": "^10.12.0",
+    "eslint-config-prettier": "^10.1.8",
+    "eslint-plugin-vuejs-accessibility": "^2.6.2",
+    "globals": "^17.13.0",
+    "lint-staged": "^17.6.0",
+    "prettier": "^3.9.9",
+    "simple-git-hooks": "^2.14.0",
+    "typescript": "~5.9.3"
+  }
+}

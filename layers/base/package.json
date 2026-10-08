@@ -1,0 +1,27 @@
+{
+  "name": "@bank/base",
+  "private": true,
+  "type": "module",
+  "main": "./nuxt.config.ts",
+  "scripts": {
+    "test": "vitest run",
+    "test:coverage": "vitest run --coverage"
+  },
+  "dependencies": {
+    "@pinia/nuxt": "^1.0.2",
+    "@tailwindcss/vite": "^4.3.3",
+    "@tanstack/vue-query": "^5.104.1",
+    "nuxt": "~4.5.2",
+    "nuxt-security": "^2.6.0",
+    "pinia": "^4.0.3",
+    "tailwindcss": "^4.3.3",
+    "ufo": "^1.6.4",
+    "vee-validate": "^4.15.1",
+    "vue": "^3.5.43",
+    "zod": "^4.6.5"
+  },
+  "devDependencies": {
+    "@vitest/coverage-v8": "^5.0.3",
+    "vitest": "^5.0.3"
+  }
+}

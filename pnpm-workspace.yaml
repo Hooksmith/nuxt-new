@@ -1,0 +1,17 @@
+packages:
+  - apps/*
+  - layers/*
+
+# Supply-chain policy: dependency lifecycle scripts are denied unless listed here.
+allowBuilds:
+  esbuild: true # verifies its platform binary
+  unrs-resolver: true # native resolver used by ESLint import rules
+  vue-demi: true # selects the Vue 3 build
+  simple-git-hooks: false # hooks are installed by the root `prepare` script instead
+
+# Packages newer than pnpm's minimum release age that were vetted and allowed explicitly.
+minimumReleaseAgeExclude:
+  - '@playwright/test@1.64.0'
+  - eslint-plugin-vuejs-accessibility@2.6.2
+  - playwright-core@1.64.0
+  - playwright@1.64.0

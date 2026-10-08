@@ -1,0 +1,36 @@
+# Runs the production images locally, wired like the cluster:
+# the shell serves "/" and proxies "/loans" to the loans zone (in Kubernetes the gateway does this).
+#   cp .env.example .env && docker compose up --build
+name: bank-portal
+
+x-hardening: &hardening
+  read_only: true
+  tmpfs: [/tmp]
+  security_opt: [no-new-privileges:true]
+  cap_drop: [ALL]
+  restart: unless-stopped
+
+services:
+  shell:
+    <<: *hardening
+    build:
+      context: .
+      args: { APP: shell, HEALTH_PATH: /healthz }
+    image: bank-portal/shell:local
+    ports: ['3000:3000']
+    environment:
+      NUXT_SESSION_PASSWORD: ${NUXT_SESSION_PASSWORD:?Set NUXT_SESSION_PASSWORD in .env (32+ chars)}
+      NUXT_LOANS_ZONE_URL: http://loans:3000
+    depends_on:
+      loans:
+        condition: service_healthy
+
+  loans:
+    <<: *hardening
+    build:
+      context: .
+      args: { APP: loans, HEALTH_PATH: /loans/healthz }
+    image: bank-portal/loans:local
+    expose: ['3000']
+    environment:
+      NUXT_API_ORIGIN: http://shell:3000

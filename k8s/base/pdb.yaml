@@ -1,0 +1,17 @@
+apiVersion: policy/v1
+kind: PodDisruptionBudget
+metadata:
+  name: shell
+spec:
+  minAvailable: 1
+  selector:
+    matchLabels: { app.kubernetes.io/name: shell }
+---
+apiVersion: policy/v1
+kind: PodDisruptionBudget
+metadata:
+  name: loans
+spec:
+  minAvailable: 1
+  selector:
+    matchLabels: { app.kubernetes.io/name: loans }

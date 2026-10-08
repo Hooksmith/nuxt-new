@@ -1,0 +1,108 @@
+name: Deploy
+
+# main -> staging automatically; a version tag (v1.2.3) -> production after manual approval.
+on:
+  push:
+    branches: [main]
+    tags: ['v*.*.*']
+
+concurrency:
+  group: deploy-${{ github.ref }}
+  cancel-in-progress: false
+
+permissions:
+  contents: read
+
+env:
+  REGISTRY: ghcr.io
+  IMAGE_PREFIX: ghcr.io/${{ github.repository_owner }}/bank-portal
+
+jobs:
+  publish:
+    name: Build & push (${{ matrix.app }})
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      packages: write
+      id-token: write # keyless provenance/SBOM attestations
+    strategy:
+      matrix:
+        include:
+          - { app: shell, health: /healthz }
+          - { app: loans, health: /loans/healthz }
+    steps:
+      - uses: actions/checkout@v7
+      - uses: docker/setup-buildx-action@v4
+      - uses: docker/login-action@v4
+        with:
+          registry: ${{ env.REGISTRY }}
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+      - id: meta
+        uses: docker/metadata-action@v6
+        with:
+          images: ${{ env.IMAGE_PREFIX }}-${{ matrix.app }}
+          tags: |
+            type=sha,format=long
+            type=semver,pattern=v{{version}}
+      - uses: docker/build-push-action@v7
+        with:
+          context: .
+          push: true
+          provenance: mode=max
+          sbom: true
+          tags: ${{ steps.meta.outputs.tags }}
+          labels: ${{ steps.meta.outputs.labels }}
+          build-args: |
+            APP=${{ matrix.app }}
+            HEALTH_PATH=${{ matrix.health }}
+          cache-from: type=gha,scope=${{ matrix.app }}
+          cache-to: type=gha,mode=max,scope=${{ matrix.app }}
+
+  staging:
+    name: Deploy to staging
+    if: github.ref == 'refs/heads/main'
+    needs: publish
+    runs-on: ubuntu-latest
+    environment:
+      name: staging
+      url: https://portal.staging.example.com
+    steps:
+      - uses: actions/checkout@v7
+      - uses: azure/setup-kubectl@v5
+      - name: Configure cluster access
+        run: |
+          mkdir -p ~/.kube
+          echo "${{ secrets.KUBECONFIG_STAGING }}" | base64 -d > ~/.kube/config
+      - name: Pin images to this commit and apply
+        working-directory: k8s/overlays/staging
+        run: |
+          kubectl kustomize . \
+            | sed "s#bank-portal-shell:staging#bank-portal-shell:sha-${GITHUB_SHA}#; s#bank-portal-loans:staging#bank-portal-loans:sha-${GITHUB_SHA}#" \
+            | kubectl apply -f -
+          kubectl -n bank-portal-staging rollout status deploy/shell deploy/loans --timeout=5m
+      - name: Smoke test
+        run: curl --fail --retry 5 --retry-delay 5 https://portal.staging.example.com/healthz
+
+  production:
+    name: Deploy to production
+    if: startsWith(github.ref, 'refs/tags/v')
+    needs: publish
+    runs-on: ubuntu-latest
+    environment:
+      name: production # protected environment: requires reviewer approval
+      url: https://portal.example.com
+    steps:
+      - uses: actions/checkout@v7
+      - uses: azure/setup-kubectl@v5
+      - name: Configure cluster access
+        run: |
+          mkdir -p ~/.kube
+          echo "${{ secrets.KUBECONFIG_PRODUCTION }}" | base64 -d > ~/.kube/config
+      - name: Apply release ${{ github.ref_name }}
+        working-directory: k8s/overlays/production
+        run: |
+          kubectl kustomize . \
+            | sed -E "s#(bank-portal-(shell|loans)):v[0-9.]+#\1:${GITHUB_REF_NAME}#" \
+            | kubectl apply -f -
+          kubectl -n bank-portal rollout status deploy/shell deploy/loans --timeout=10m

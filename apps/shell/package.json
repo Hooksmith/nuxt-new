@@ -1,0 +1,39 @@
+{
+  "name": "@bank/shell",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "nuxt dev --port 3000",
+    "build": "nuxt build",
+    "preview": "nuxt preview",
+    "postinstall": "nuxt prepare",
+    "typecheck": "nuxt typecheck",
+    "test": "vitest run",
+    "test:coverage": "vitest run --coverage"
+  },
+  "dependencies": {
+    "@bank/base": "workspace:*",
+    "@pinia/nuxt": "^1.0.2",
+    "@tanstack/vue-query": "^5.104.1",
+    "chart.js": "^4.5.1",
+    "graphql": "^16.14.2",
+    "h3": "^1.15.11",
+    "nuxt": "~4.5.2",
+    "nuxt-security": "^2.6.0",
+    "pinia": "^4.0.3",
+    "ufo": "^1.6.4",
+    "vee-validate": "^4.15.1",
+    "vue": "^3.5.43",
+    "vue-chartjs": "^5.3.4",
+    "zod": "^4.6.5"
+  },
+  "devDependencies": {
+    "@nuxt/test-utils": "^4.3.3",
+    "@vitest/coverage-v8": "^5.0.3",
+    "@vue/test-utils": "^2.5.1",
+    "happy-dom": "^20.14.5",
+    "typescript": "~5.9.3",
+    "vitest": "^5.0.3",
+    "vue-tsc": "^3.3.12"
+  }
+}

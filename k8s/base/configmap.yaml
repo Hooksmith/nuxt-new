@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: bank-portal-config
+data:
+  # Loans zone renders on the server and calls the BFF over the cluster network.
+  NUXT_API_ORIGIN: http://shell.bank-portal.svc.cluster.local
+  NUXT_PUBLIC_IDLE_TIMEOUT_MINUTES: '10'
+  NUXT_LOAN_SIMULATOR_INTERVAL_MS: '8000'
+---
+# NUXT_SESSION_PASSWORD is NOT committed. Create it out-of-band, e.g. with
+# External Secrets / Sealed Secrets, or for a sandbox:
+#   kubectl -n bank-portal create secret generic bank-portal-secrets \
+#     --from-literal=NUXT_SESSION_PASSWORD="$(openssl rand -base64 48)"

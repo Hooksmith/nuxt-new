@@ -1,0 +1,39 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+resources:
+  - ../../base
+namespace: bank-portal-staging
+patches:
+  - target: { kind: Namespace, name: bank-portal }
+    patch: |
+      - op: replace
+        path: /metadata/name
+        value: bank-portal-staging
+  - target: { kind: HTTPRoute, name: bank-portal }
+    patch: |
+      - op: replace
+        path: /spec/hostnames/0
+        value: portal.staging.example.com
+  - target: { kind: ConfigMap, name: bank-portal-config }
+    patch: |
+      - op: replace
+        path: /data/NUXT_API_ORIGIN
+        value: http://shell.bank-portal-staging.svc.cluster.local
+  - target: { kind: HorizontalPodAutoscaler }
+    patch: |
+      - op: replace
+        path: /spec/minReplicas
+        value: 1
+  - target: { kind: PodDisruptionBudget }
+    patch: |
+      - op: replace
+        path: /spec/minAvailable
+        value: 0
+# CI pins the image tags: kustomize edit set image bank-portal/shell=ghcr.io/...:<sha>
+images:
+  - name: bank-portal/shell
+    newName: ghcr.io/your-org/bank-portal-shell
+    newTag: staging
+  - name: bank-portal/loans
+    newName: ghcr.io/your-org/bank-portal-loans
+    newTag: staging

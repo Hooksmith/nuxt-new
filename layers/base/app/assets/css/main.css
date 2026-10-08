@@ -1,0 +1,75 @@
+@import 'tailwindcss';
+
+/* Tailwind only auto-scans the app that is being built; include the shared layer too. */
+@source '../..';
+
+@theme {
+  --font-sans: ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, 'Noto Sans Khmer', sans-serif;
+  --color-brand-50: #eff6ff;
+  --color-brand-100: #dbeafe;
+  --color-brand-500: #3b82f6;
+  --color-brand-600: #2563eb;
+  --color-brand-700: #1d4ed8;
+  --color-brand-800: #1e40af;
+}
+
+/* Semantic tokens that flip with the colour scheme. */
+:root {
+  --canvas: #f8fafc;
+  --surface: #ffffff;
+  --surface-muted: #f1f5f9;
+  --fg: #0f172a;
+  --fg-muted: #475569;
+  --border: #e2e8f0;
+  --focus: #2563eb;
+  color-scheme: light;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --canvas: #020617;
+    --surface: #0f172a;
+    --surface-muted: #1e293b;
+    --fg: #f1f5f9;
+    --fg-muted: #94a3b8;
+    --border: #334155;
+    --focus: #60a5fa;
+    color-scheme: dark;
+  }
+}
+
+@theme inline {
+  --color-canvas: var(--canvas);
+  --color-surface: var(--surface);
+  --color-surface-muted: var(--surface-muted);
+  --color-fg: var(--fg);
+  --color-fg-muted: var(--fg-muted);
+  --color-border: var(--border);
+  --color-focus: var(--focus);
+}
+
+@layer base {
+  html {
+    @apply bg-canvas text-fg antialiased;
+  }
+
+  :focus-visible {
+    outline: 3px solid var(--focus);
+    outline-offset: 2px;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+}
+
+@utility tabular {
+  font-variant-numeric: tabular-nums;
+}
