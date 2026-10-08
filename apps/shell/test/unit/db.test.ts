@@ -4,6 +4,7 @@ import {
   TransitionError,
   createLoan,
   getAccount,
+  getCreditScore,
   getLoan,
   getPortfolio,
   listAccounts,
@@ -82,5 +83,16 @@ describe('mock core banking', () => {
     const cashflow = portfolio.cashflow({ months: 3 })
     expect(cashflow).toHaveLength(3)
     expect(cashflow.every((p) => /^\d{4}-\d{2}$/.test(p.month))).toBe(true)
+  })
+
+  it('rebases the JSON snapshot so the data is always current', () => {
+    const [latest] = listTransactions('usr_1', 'acc_1', { page: 1, pageSize: 5, type: 'all', search: '' }).items
+    const ageHours = (Date.now() - Date.parse(latest!.bookedAt)) / 3_600_000
+    expect(ageHours).toBeGreaterThanOrEqual(0)
+    expect(ageHours).toBeLessThan(48)
+
+    const thisMonth = new Date().toISOString().slice(0, 7)
+    expect(getCreditScore('usr_1')?.history.at(-1)?.month).toBe(thisMonth)
+    expect(getCreditScore('usr_unknown')).toBeUndefined()
   })
 })

@@ -1,0 +1,3829 @@
+{
+  "snapshotAt": "2026-10-08T12:42:37.724Z",
+  "users": [
+    {
+      "id": "usr_1",
+      "name": "Dara Sok",
+      "email": "demo@bank.test",
+      "segment": "premier",
+      "customerSince": "2019-04-12",
+      "passwordSalt": "demo-salt-not-for-production",
+      "passwordHash": "a4f893aad4830d93936501c2a2a221dac92aafe536b0dd6ef1453f09ad0a8873"
+    }
+  ],
+  "accounts": [
+    {
+      "id": "acc_1",
+      "userId": "usr_1",
+      "name": "Everyday Checking",
+      "type": "checking",
+      "number": "0012 3456 7890",
+      "balance": {
+        "amount": 1284550,
+        "currency": "USD"
+      },
+      "availableBalance": {
+        "amount": 1272050,
+        "currency": "USD"
+      },
+      "status": "active",
+      "openedAt": "2019-04-12T00:00:00.000Z"
+    },
+    {
+      "id": "acc_2",
+      "userId": "usr_1",
+      "name": "Goal Saver",
+      "type": "savings",
+      "number": "0012 3456 4821",
+      "balance": {
+        "amount": 4520000,
+        "currency": "USD"
+      },
+      "availableBalance": {
+        "amount": 4520000,
+        "currency": "USD"
+      },
+      "status": "active",
+      "openedAt": "2019-04-12T00:00:00.000Z"
+    },
+    {
+      "id": "acc_3",
+      "userId": "usr_1",
+      "name": "Riel Savings",
+      "type": "savings",
+      "number": "0045 1188 2093",
+      "balance": {
+        "amount": 1850000000,
+        "currency": "KHR"
+      },
+      "availableBalance": {
+        "amount": 1850000000,
+        "currency": "KHR"
+      },
+      "status": "active",
+      "openedAt": "2019-04-12T00:00:00.000Z"
+    },
+    {
+      "id": "acc_4",
+      "userId": "usr_1",
+      "name": "12-Month Term Deposit",
+      "type": "term_deposit",
+      "number": "0090 7731 5566",
+      "balance": {
+        "amount": 10000000,
+        "currency": "USD"
+      },
+      "availableBalance": {
+        "amount": 10000000,
+        "currency": "USD"
+      },
+      "status": "active",
+      "openedAt": "2019-04-12T00:00:00.000Z"
+    }
+  ],
+  "transactions": [
+    {
+      "id": "txn_acc_2_0",
+      "userId": "usr_1",
+      "accountId": "acc_2",
+      "type": "credit",
+      "amount": {
+        "amount": 19634,
+        "currency": "USD"
+      },
+      "description": "Refund — Refund",
+      "category": "Refund",
+      "counterparty": "Refund",
+      "status": "posted",
+      "bookedAt": "2026-10-08T05:05:28.922Z"
+    },
+    {
+      "id": "txn_acc_4_0",
+      "userId": "usr_1",
+      "accountId": "acc_4",
+      "type": "credit",
+      "amount": {
+        "amount": 46444,
+        "currency": "USD"
+      },
+      "description": "Salary — Acme Co. Payroll",
+      "category": "Salary",
+      "counterparty": "Acme Co. Payroll",
+      "status": "posted",
+      "bookedAt": "2026-10-07T17:22:58.928Z"
+    },
+    {
+      "id": "txn_acc_1_0",
+      "userId": "usr_1",
+      "accountId": "acc_1",
+      "type": "credit",
+      "amount": {
+        "amount": 325000,
+        "currency": "USD"
+      },
+      "description": "Salary — Acme Co. Payroll",
+      "category": "Salary",
+      "counterparty": "Acme Co. Payroll",
+      "status": "posted",
+      "bookedAt": "2026-10-07T14:08:03.377Z"
+    },
+    {
+      "id": "txn_acc_3_0",
+      "userId": "usr_1",
+      "accountId": "acc_3",
+      "type": "credit",
+      "amount": {
+        "amount": 100298300,
+        "currency": "KHR"
+      },
+      "description": "Refund — Refund",
+      "category": "Refund",
+      "counterparty": "Refund",
+      "status": "posted",
+      "bookedAt": "2026-10-07T14:03:33.080Z"
+    },
+    {
+      "id": "txn_acc_1_1",
+      "userId": "usr_1",
+      "accountId": "acc_1",
+      "type": "debit",
+      "amount": {
+        "amount": 4004,
+        "currency": "USD"
+      },
+      "description": "Card payment — Lucky Supermarket",
+      "category": "Groceries",
+      "counterparty": "Lucky Supermarket",
+      "status": "pending",
+      "bookedAt": "2026-10-06T18:55:46.114Z"
+    },
+    {
+      "id": "txn_acc_1_2",
+      "userId": "usr_1",
+      "accountId": "acc_1",
+      "type": "credit",
+      "amount": {
+        "amount": 23294,
+        "currency": "USD"
+      },
+      "description": "Transfer — Transfer from Goal Saver",
+      "category": "Transfer",
+      "counterparty": "Transfer from Goal Saver",
+      "status": "posted",
+      "bookedAt": "2026-10-05T15:05:56.546Z"
+    },
+    {
+      "id": "txn_acc_1_3",
+      "userId": "usr_1",
+      "accountId": "acc_1",
+      "type": "debit",
+      "amount": {
+        "amount": 6291,
+        "currency": "USD"
+      },
+      "description": "Card payment — EDC Electricity",
+      "category": "Utilities",
+      "counterparty": "EDC Electricity",
+      "status": "posted",
+      "bookedAt": "2026-10-04T21:15:00.601Z"
+    },
+    {
+      "id": "txn_acc_1_4",
+      "userId": "usr_1",
+      "accountId": "acc_1",
+      "type": "debit",
+      "amount": {
+        "amount": 6039,
+        "currency": "USD"
+      },
+      "description": "Card payment — Brown Coffee",
+      "category": "Dining",
+      "counterparty": "Brown Coffee",
+      "status": "posted",
+      "bookedAt": "2026-10-04T04:10:24.715Z"
+    },
+    {
+      "id": "txn_acc_1_5",
+      "userId": "usr_1",
+      "accountId": "acc_1",
+      "type": "debit",
+      "amount": {
+        "amount": 13586,
+        "currency": "USD"
+      },
+      "description": "Card payment — Grab",
+      "category": "Transport",
+      "counterparty": "Grab",
+      "status": "posted",
+      "bookedAt": "2026-10-03T11:12:34.623Z"
+    },
+    {
+      "id": "txn_acc_1_6",
+      "userId": "usr_1",
+      "accountId": "acc_1",
+      "type": "debit",
+      "amount": {
+        "amount": 13819,
+        "currency": "USD"
+      },
+      "description": "Card payment — Grab",
+      "category": "Transport",
+      "counterparty": "Grab",
+      "status": "posted",
+      "bookedAt": "2026-10-01T21:40:37.718Z"
+    },
+    {
+      "id": "txn_acc_1_7",
+      "userId": "usr_1",
+      "accountId": "acc_1",
+      "type": "debit",
+      "amount": {
+        "amount": 6203,
+        "currency": "USD"
+      },
+      "description": "Card payment — Tela Fuel",
+      "category": "Transport",
+      "counterparty": "Tela Fuel",
+      "status": "posted",
+      "bookedAt": "2026-10-01T04:14:32.135Z"
+    },
+    {
+      "id": "txn_acc_2_8",
+      "userId": "usr_1",
+      "accountId": "acc_2",
+      "type": "debit",
+      "amount": {
+        "amount": 6044,
+        "currency": "USD"
+      },
+      "description": "Card payment — Tela Fuel",
+      "category": "Transport",
+      "counterparty": "Tela Fuel",
+      "status": "posted",
+      "bookedAt": "2026-09-30T01:33:55.709Z"
+    },
+    {
+      "id": "txn_acc_1_8",
+      "userId": "usr_1",
+      "accountId": "acc_1",
+      "type": "debit",
+      "amount": {
+        "amount": 8016,
+        "currency": "USD"
+      },
+      "description": "Card payment — Grab",
+      "category": "Transport",
+      "counterparty": "Grab",
+      "status": "posted",
+      "bookedAt": "2026-09-30T00:58:59.538Z"
+    },
+    {
+      "id": "txn_acc_3_8",
+      "userId": "usr_1",
+      "accountId": "acc_3",
+      "type": "credit",
+      "amount": {
+        "amount": 115964400,
+        "currency": "KHR"
+      },
+      "description": "Salary — Acme Co. Payroll",
+      "category": "Salary",
+      "counterparty": "Acme Co. Payroll",
+      "status": "posted",
+      "bookedAt": "2026-09-29T12:45:19.387Z"
+    },
+    {
+      "id": "txn_acc_1_9",
+      "userId": "usr_1",
+      "accountId": "acc_1",
+      "type": "debit",
+      "amount": {
+        "amount": 3808,
+        "currency": "USD"
+      },
+      "description": "Card payment — EDC Electricity",
+      "category": "Utilities",
+      "counterparty": "EDC Electricity",
+      "status": "posted",
+      "bookedAt": "2026-09-28T20:28:29.878Z"
+    },
+    {
+      "id": "txn_acc_1_10",
+      "userId": "usr_1",
+      "accountId": "acc_1",
+      "type": "debit",
+      "amount": {
+        "amount": 14514,
+        "currency": "USD"
+      },
+      "description": "Card payment — Grab",
+      "category": "Transport",
+      "counterparty": "Grab",
+      "status": "posted",
+      "bookedAt": "2026-09-28T04:31:07.791Z"
+    },
+    {
+      "id": "txn_acc_1_11",
+      "userId": "usr_1",
+      "accountId": "acc_1",
+      "type": "debit",
+      "amount": {
+        "amount": 15135,
+        "currency": "USD"
+      },
+      "description": "Card payment — Grab",
+      "category": "Transport",
+      "counterparty": "Grab",
+      "status": "posted",
+      "bookedAt": "2026-09-26T14:57:57.545Z"
+    },
+    {
+      "id": "txn_acc_1_12",
+      "userId": "usr_1",
+      "accountId": "acc_1",
+      "type": "debit",
+      "amount": {
+        "amount": 15115,
+        "currency": "USD"
+      },
+      "description": "Card payment — Brown Coffee",
+      "category": "Dining",
+      "counterparty": "Brown Coffee",
+      "status": "posted",
+      "bookedAt": "2026-09-26T04:36:40.168Z"
+    },
+    {
+      "id": "txn_acc_1_13",
+      "userId": "usr_1",
+      "accountId": "acc_1",
+      "type": "credit",
+      "amount": {
+        "amount": 36440,
+        "currency": "USD"
+      },
+      "description": "Refund — Refund",
+      "category": "Refund",
+      "counterparty": "Refund",
+      "status": "posted",
+      "bookedAt": "2026-09-25T11:32:33.069Z"
+    },
+    {
+      "id": "txn_acc_1_14",
+      "userId": "usr_1",
+      "accountId": "acc_1",
+      "type": "debit",
+      "amount": {
+        "amount": 15344,
+        "currency": "USD"
+      },
+      "description": "Card payment — Smart Axiata",
+      "category": "Telecom",
+      "counterparty": "Smart Axiata",
+      "status": "posted",
+      "bookedAt": "2026-09-24T01:00:53.280Z"
+    },
+    {
+      "id": "txn_acc_1_15",
+      "userId": "usr_1",
+      "accountId": "acc_1",
+      "type": "debit",
+      "amount": {
+        "amount": 15873,
+        "currency": "USD"
+      },
+      "description": "Card payment — Tela Fuel",
+      "category": "Transport",
+      "counterparty": "Tela Fuel",
+      "status": "posted",
+      "bookedAt": "2026-09-22T14:02:15.420Z"
+    },
+    {
+      "id": "txn_acc_3_16",
+      "userId": "usr_1",
+      "accountId": "acc_3",
+      "type": "credit",
+      "amount": {
+        "amount": 11459500,
+        "currency": "KHR"
+      },
+      "description": "Interest — Interest",
+      "category": "Interest",
+      "counterparty": "Interest",
+      "status": "posted",
+      "bookedAt": "2026-09-22T11:27:41.485Z"
+    },
+    {
+      "id": "txn_acc_1_16",
+      "userId": "usr_1",
+      "accountId": "acc_1",
+      "type": "debit",
+      "amount": {
+        "amount": 9190,
+        "currency": "USD"
+      },
+      "description": "Card payment — EDC Electricity",
+      "category": "Utilities",
+      "counterparty": "EDC Electricity",
+      "status": "posted",
+      "bookedAt": "2026-09-22T05:48:51.953Z"
+    },
+    {
+      "id": "txn_acc_2_16",
+      "userId": "usr_1",
+      "accountId": "acc_2",
+      "type": "debit",
+      "amount": {
+        "amount": 16806,
+        "currency": "USD"
+      },
+      "description": "Card payment — Smart Axiata",
+      "category": "Telecom",
+      "counterparty": "Smart Axiata",
+      "status": "posted",
+      "bookedAt": "2026-09-21T15:11:17.667Z"
+    },
+    {
+      "id": "txn_acc_1_17",
+      "userId": "usr_1",
+      "accountId": "acc_1",
+      "type": "debit",
+      "amount": {
+        "amount": 15875,
+        "currency": "USD"
+      },
+      "description": "Card payment — EDC Electricity",
+      "category": "Utilities",
+      "counterparty": "EDC Electricity",
+      "status": "posted",
+      "bookedAt": "2026-09-21T01:42:47.715Z"
+    },
+    {
+      "id": "txn_acc_1_18",
+      "userId": "usr_1",
+      "accountId": "acc_1",
+      "type": "debit",
+      "amount": {
+        "amount": 5684,
+        "currency": "USD"
+      },
+      "description": "Card payment — Aeon Mall",
+      "category": "Shopping",
+      "counterparty": "Aeon Mall",
+      "status": "posted",
+      "bookedAt": "2026-09-19T15:17:58.969Z"
+    },
+    {
+      "id": "txn_acc_1_19",
+      "userId": "usr_1",
+      "accountId": "acc_1",
+      "type": "debit",
+      "amount": {
+        "amount": 12344,
+        "currency": "USD"
+      },
+      "description": "Card payment — Lucky Supermarket",
+      "category": "Groceries",
+      "counterparty": "Lucky Supermarket",
+      "status": "posted",
+      "bookedAt": "2026-09-19T04:11:48.841Z"
+    },
+    {
+      "id": "txn_acc_1_20",
+      "userId": "usr_1",
+      "accountId": "acc_1",
+      "type": "debit",
+      "amount": {
+        "amount": 9063,
+        "currency": "USD"
+      },
+      "description": "Card payment — Lucky Supermarket",
+      "category": "Groceries",
+      "counterparty": "Lucky Supermarket",
+      "status": "posted",
+      "bookedAt": "2026-09-17T13:08:56.596Z"
+    },
+    {
+      "id": "txn_acc_1_21",
+      "userId": "usr_1",
+      "accountId": "acc_1",
+      "type": "debit",
+      "amount": {
+        "amount": 3983,
+        "currency": "USD"
+      },
+      "description": "Card payment — Smart Axiata",
+      "category": "Telecom",
+      "counterparty": "Smart Axiata",
+      "status": "posted",
+      "bookedAt": "2026-09-16T15:54:03.724Z"
+    },
+    {
+      "id": "txn_acc_1_22",
+      "userId": "usr_1",
+      "accountId": "acc_1",
+      "type": "debit",
+      "amount": {
+        "amount": 17738,
+        "currency": "USD"
+      },
+      "description": "Card payment — Royal Phnom Penh Hospital",
+      "category": "Health",
+      "counterparty": "Royal Phnom Penh Hospital",
+      "status": "posted",
+      "bookedAt": "2026-09-16T01:03:10.583Z"
+    },
+    {
+      "id": "txn_acc_1_23",
+      "userId": "usr_1",
+      "accountId": "acc_1",
+      "type": "credit",
+      "amount": {
+        "amount": 10961,
+        "currency": "USD"
+      },
+      "description": "Transfer — Transfer from Goal Saver",
+      "category": "Transfer",
+      "counterparty": "Transfer from Goal Saver",
+      "status": "posted",
+      "bookedAt": "2026-09-15T01:25:48.616Z"
+    },
+    {
+      "id": "txn_acc_1_24",
+      "userId": "usr_1",
+      "accountId": "acc_1",
+      "type": "debit",
+      "amount": {
+        "amount": 11517,
+        "currency": "USD"
+      },
+      "description": "Card payment — Lucky Supermarket",
+      "category": "Groceries",
+      "counterparty": "Lucky Supermarket",
+      "status": "posted",
+      "bookedAt": "2026-09-14T05:58:32.809Z"
+    },
+    {
+      "id": "txn_acc_3_24",
+      "userId": "usr_1",
+      "accountId": "acc_3",
+      "type": "credit",
+      "amount": {
+        "amount": 51278700,
+        "currency": "KHR"
+      },
+      "description": "Interest — Interest",
+      "category": "Interest",
+      "counterparty": "Interest",
+      "status": "posted",
+      "bookedAt": "2026-09-14T05:57:55.232Z"
+    },
+    {
+      "id": "txn_acc_2_24",
+      "userId": "usr_1",
+      "accountId": "acc_2",
+      "type": "debit",
+      "amount": {
+        "amount": 2007,
+        "currency": "USD"
+      },
+      "description": "Card payment — Grab",
+      "category": "Transport",
+      "counterparty": "Grab",
+      "status": "posted",
+      "bookedAt": "2026-09-13T14:00:47.254Z"
+    },
+    {
+      "id": "txn_acc_1_25",
+      "userId": "usr_1",
+      "accountId": "acc_1",
+      "type": "debit",
+      "amount": {
+        "amount": 8175,
+        "currency": "USD"
+      },
+      "description": "Card payment — Brown Coffee",
+      "category": "Dining",
+      "counterparty": "Brown Coffee",
+      "status": "posted",
+      "bookedAt": "2026-09-13T10:58:39.257Z"
+    },
+    {
+      "id": "txn_acc_1_26",
+      "userId": "usr_1",
+      "accountId": "acc_1",
+      "type": "debit",
+      "amount": {
+        "amount": 11097,
+        "currency": "USD"
+      },
+      "description": "Card payment — Brown Coffee",
+      "category": "Dining",
+      "counterparty": "Brown Coffee",
+      "status": "posted",
+      "bookedAt": "2026-09-12T03:52:34.220Z"
+    },
+    {
+      "id": "txn_acc_1_27",
+      "userId": "usr_1",
+      "accountId": "acc_1",
+      "type": "credit",
+      "amount": {
+        "amount": 37441,
+        "currency": "USD"
+      },
+      "description": "Refund — Refund",
+      "category": "Refund",
+      "counterparty": "Refund",
+      "status": "posted",
+      "bookedAt": "2026-09-11T07:28:37.467Z"
+    },
+    {
+      "id": "txn_acc_1_28",
+      "userId": "usr_1",
+      "accountId": "acc_1",
+      "type": "debit",
+      "amount": {
+        "amount": 9555,
+        "currency": "USD"
+      },
+      "description": "Card payment — Tela Fuel",
+      "category": "Transport",
+      "counterparty": "Tela Fuel",
+      "status": "posted",
+      "bookedAt": "2026-09-09T23:24:11.672Z"
+    },
+    {
+      "id": "txn_acc_1_29",
+      "userId": "usr_1",
+      "accountId": "acc_1",
+      "type": "debit",
+      "amount": {
+        "amount": 13769,
+        "currency": "USD"
+      },
+      "description": "Card payment — Royal Phnom Penh Hospital",
+      "category": "Health",
+      "counterparty": "Royal Phnom Penh Hospital",
+      "status": "posted",
+      "bookedAt": "2026-09-08T13:24:38.620Z"
+    },
+    {
+      "id": "txn_acc_4_30",
+      "userId": "usr_1",
+      "accountId": "acc_4",
+      "type": "debit",
+      "amount": {
+        "amount": 15999,
+        "currency": "USD"
+      },
+      "description": "Card payment — Smart Axiata",
+      "category": "Telecom",
+      "counterparty": "Smart Axiata",
+      "status": "posted",
+      "bookedAt": "2026-09-08T08:39:10.114Z"
+    },
+    {
+      "id": "txn_acc_1_30",
+      "userId": "usr_1",
+      "accountId": "acc_1",
+      "type": "credit",
+      "amount": {
+        "amount": 325000,
+        "currency": "USD"
+      },
+      "description": "Salary — Acme Co. Payroll",
+      "category": "Salary",
+      "counterparty": "Acme Co. Payroll",
+      "status": "posted",
+      "bookedAt": "2026-09-07T23:56:58.070Z"
+    },
+    {
+      "id": "txn_acc_1_31",
+      "userId": "usr_1",
+      "accountId": "acc_1",
+      "type": "debit",
+      "amount": {
+        "amount": 8665,
+        "currency": "USD"
+      },
+      "description": "Card payment — Aeon Mall",
+      "category": "Shopping",
+      "counterparty": "Aeon Mall",
+      "status": "posted",
+      "bookedAt": "2026-09-07T09:31:55.733Z"
+    },
+    {
+      "id": "txn_acc_2_32",
+      "userId": "usr_1",
+      "accountId": "acc_2",
+      "type": "credit",
+      "amount": {
+        "amount": 32310,
+        "currency": "USD"
+      },
+      "description": "Interest — Interest",
+      "category": "Interest",
+      "counterparty": "Interest",
+      "status": "posted",
+      "bookedAt": "2026-09-06T07:40:57.454Z"
+    },
+    {
+      "id": "txn_acc_3_32",
+      "userId": "usr_1",
+      "accountId": "acc_3",
+      "type": "credit",
+      "amount": {
+        "amount": 123077900,
+        "currency": "KHR"
+      },
+      "description": "Salary — Acme Co. Payroll",
+      "category": "Salary",
+      "counterparty": "Acme Co. Payroll",
+      "status": "posted",
+      "bookedAt": "2026-09-05T23:47:47.779Z"
+    },
+    {
+      "id": "txn_acc_1_32",
+      "userId": "usr_1",
+      "accountId": "acc_1",
+      "type": "credit",
+      "amount": {
+        "amount": 54289,
+        "currency": "USD"
+      },
+      "description": "Transfer — Transfer from Goal Saver",
+      "category": "Transfer",
+      "counterparty": "Transfer from Goal Saver",
+      "status": "posted",
+      "bookedAt": "2026-09-05T13:21:40.303Z"
+    },
+    {
+      "id": "txn_acc_1_33",
+      "userId": "usr_1",
+      "accountId": "acc_1",
+      "type": "debit",
+      "amount": {
+        "amount": 17246,
+        "currency": "USD"
+      },
+      "description": "Card payment — EDC Electricity",
+      "category": "Utilities",
+      "counterparty": "EDC Electricity",
+      "status": "posted",
+      "bookedAt": "2026-09-05T05:26:40.746Z"
+    },
+    {
+      "id": "txn_acc_1_34",
+      "userId": "usr_1",
+      "accountId": "acc_1",
+      "type": "debit",
+      "amount": {
+        "amount": 13871,
+        "currency": "USD"
+      },
+      "description": "Card payment — Aeon Mall",
+      "category": "Shopping",
+      "counterparty": "Aeon Mall",
+      "status": "posted",
+      "bookedAt": "2026-09-03T15:21:43.477Z"
+    },
+    {
+      "id": "txn_acc_1_35",
+      "userId": "usr_1",
+      "accountId": "acc_1",
+      "type": "debit",
+      "amount": {
+        "amount": 9630,
+        "currency": "USD"
+      },
+      "description": "Card payment — Royal Phnom Penh Hospital",
+      "category": "Health",
+      "counterparty": "Royal Phnom Penh Hospital",
+      "status": "posted",
+      "bookedAt": "2026-09-02T23:46:36.473Z"
+    },
+    {
+      "id": "txn_acc_1_36",
+      "userId": "usr_1",
+      "accountId": "acc_1",
+      "type": "debit",
+      "amount": {
+        "amount": 2298,
+        "currency": "USD"
+      },
+      "description": "Card payment — Tela Fuel",
+      "category": "Transport",
+      "counterparty": "Tela Fuel",
+      "status": "posted",
+      "bookedAt": "2026-09-01T22:19:57.297Z"
+    },
+    {
+      "id": "txn_acc_1_37",
+      "userId": "usr_1",
+      "accountId": "acc_1",
+      "type": "debit",
+      "amount": {
+        "amount": 14186,
+        "currency": "USD"
+      },
+      "description": "Card payment — Royal Phnom Penh Hospital",
+      "category": "Health",
+      "counterparty": "Royal Phnom Penh Hospital",
+      "status": "posted",
+      "bookedAt": "2026-08-31T21:46:27.578Z"
+    },
+    {
+      "id": "txn_acc_1_38",
+      "userId": "usr_1",
+      "accountId": "acc_1",
+      "type": "debit",
+      "amount": {
+        "amount": 674,
+        "currency": "USD"
+      },
+      "description": "Card payment — Lucky Supermarket",
+      "category": "Groceries",
+      "counterparty": "Lucky Supermarket",
+      "status": "posted",
+      "bookedAt": "2026-08-30T19:54:29.232Z"
+    },
+    {
+      "id": "txn_acc_1_39",
+      "userId": "usr_1",
+      "accountId": "acc_1",
+      "type": "debit",
+      "amount": {
+        "amount": 15666,
+        "currency": "USD"
+      },
+      "description": "Card payment — Aeon Mall",
+      "category": "Shopping",
+      "counterparty": "Aeon Mall",
+      "status": "posted",
+      "bookedAt": "2026-08-29T20:20:17.783Z"
+    },
+    {
+      "id": "txn_acc_2_40",
+      "userId": "usr_1",
+      "accountId": "acc_2",
+      "type": "debit",
+      "amount": {
+        "amount": 2310,
+        "currency": "USD"
+      },
+      "description": "Card payment — Smart Axiata",
+      "category": "Telecom",
+      "counterparty": "Smart Axiata",
+      "status": "posted",
+      "bookedAt": "2026-08-29T10:19:39.466Z"
+    },
+    {
+      "id": "txn_acc_3_40",
+      "userId": "usr_1",
+      "accountId": "acc_3",
+      "type": "credit",
+      "amount": {
+        "amount": 198944300,
+        "currency": "KHR"
+      },
+      "description": "Refund — Refund",
+      "category": "Refund",
+      "counterparty": "Refund",
+      "status": "posted",
+      "bookedAt": "2026-08-29T06:48:02.202Z"
+    },
+    {
+      "id": "txn_acc_1_40",
+      "userId": "usr_1",
+      "accountId": "acc_1",
+      "type": "debit",
+      "amount": {
+        "amount": 14973,
+        "currency": "USD"
+      },
+      "description": "Card payment — Lucky Supermarket",
+      "category": "Groceries",
+      "counterparty": "Lucky Supermarket",
+      "status": "posted",
+      "bookedAt": "2026-08-29T02:55:13.373Z"
+    },
+    {
+      "id": "txn_acc_1_41",
+      "userId": "usr_1",
+      "accountId": "acc_1",
+      "type": "debit",
+      "amount": {
+        "amount": 12998,
+        "currency": "USD"
+      },
+      "description": "Card payment — Royal Phnom Penh Hospital",
+      "category": "Health",
+      "counterparty": "Royal Phnom Penh Hospital",
+      "status": "posted",
+      "bookedAt": "2026-08-28T09:20:37.810Z"
+    },
+    {
+      "id": "txn_acc_1_42",
+      "userId": "usr_1",
+      "accountId": "acc_1",
+      "type": "debit",
+      "amount": {
+        "amount": 1760,
+        "currency": "USD"
+      },
+      "description": "Card payment — Grab",
+      "category": "Transport",
+      "counterparty": "Grab",
+      "status": "posted",
+      "bookedAt": "2026-08-27T09:41:41.635Z"
+    },
+    {
+      "id": "txn_acc_1_43",
+      "userId": "usr_1",
+      "accountId": "acc_1",
+      "type": "debit",
+      "amount": {
+        "amount": 13725,
+        "currency": "USD"
+      },
+      "description": "Card payment — Brown Coffee",
+      "category": "Dining",
+      "counterparty": "Brown Coffee",
+      "status": "posted",
+      "bookedAt": "2026-08-25T17:23:49.445Z"
+    },
+    {
+      "id": "txn_acc_1_44",
+      "userId": "usr_1",
+      "accountId": "acc_1",
+      "type": "credit",
+      "amount": {
+        "amount": 34182,
+        "currency": "USD"
+      },
+      "description": "Salary — Acme Co. Payroll",
+      "category": "Salary",
+      "counterparty": "Acme Co. Payroll",
+      "status": "posted",
+      "bookedAt": "2026-08-25T03:47:36.007Z"
+    },
+    {
+      "id": "txn_acc_1_45",
+      "userId": "usr_1",
+      "accountId": "acc_1",
+      "type": "debit",
+      "amount": {
+        "amount": 662,
+        "currency": "USD"
+      },
+      "description": "Card payment — Tela Fuel",
+      "category": "Transport",
+      "counterparty": "Tela Fuel",
+      "status": "posted",
+      "bookedAt": "2026-08-23T16:01:56.009Z"
+    },
+    {
+      "id": "txn_acc_1_46",
+      "userId": "usr_1",
+      "accountId": "acc_1",
+      "type": "debit",
+      "amount": {
+        "amount": 13041,
+        "currency": "USD"
+      },
+      "description": "Card payment — Aeon Mall",
+      "category": "Shopping",
+      "counterparty": "Aeon Mall",
+      "status": "posted",
+      "bookedAt": "2026-08-23T08:22:15.909Z"
+    },
+    {
+      "id": "txn_acc_1_47",
+      "userId": "usr_1",
+      "accountId": "acc_1",
+      "type": "debit",
+      "amount": {
+        "amount": 12215,
+        "currency": "USD"
+      },
+      "description": "Card payment — Smart Axiata",
+      "category": "Telecom",
+      "counterparty": "Smart Axiata",
+      "status": "posted",
+      "bookedAt": "2026-08-21T15:04:52.860Z"
+    },
+    {
+      "id": "txn_acc_2_48",
+      "userId": "usr_1",
+      "accountId": "acc_2",
+      "type": "credit",
+      "amount": {
+        "amount": 11452,
+        "currency": "USD"
+      },
+      "description": "Transfer — Transfer from Goal Saver",
+      "category": "Transfer",
+      "counterparty": "Transfer from Goal Saver",
+      "status": "posted",
+      "bookedAt": "2026-08-21T11:32:45.150Z"
+    },
+    {
+      "id": "txn_acc_1_48",
+      "userId": "usr_1",
+      "accountId": "acc_1",
+      "type": "credit",
+      "amount": {
+        "amount": 9194,
+        "currency": "USD"
+      },
+      "description": "Transfer — Transfer from Goal Saver",
+      "category": "Transfer",
+      "counterparty": "Transfer from Goal Saver",
+      "status": "posted",
+      "bookedAt": "2026-08-21T09:06:52.036Z"
+    },
+    {
+      "id": "txn_acc_3_48",
+      "userId": "usr_1",
+      "accountId": "acc_3",
+      "type": "credit",
+      "amount": {
+        "amount": 244319000,
+        "currency": "KHR"
+      },
+      "description": "Interest — Interest",
+      "category": "Interest",
+      "counterparty": "Interest",
+      "status": "posted",
+      "bookedAt": "2026-08-21T05:12:28.689Z"
+    },
+    {
+      "id": "txn_acc_1_49",
+      "userId": "usr_1",
+      "accountId": "acc_1",
+      "type": "debit",
+      "amount": {
+        "amount": 11011,
+        "currency": "USD"
+      },
+      "description": "Card payment — Aeon Mall",
+      "category": "Shopping",
+      "counterparty": "Aeon Mall",
+      "status": "posted",
+      "bookedAt": "2026-08-20T00:23:24.510Z"
+    },
+    {
+      "id": "txn_acc_1_50",
+      "userId": "usr_1",
+      "accountId": "acc_1",
+      "type": "debit",
+      "amount": {
+        "amount": 14664,
+        "currency": "USD"
+      },
+      "description": "Card payment — EDC Electricity",
+      "category": "Utilities",
+      "counterparty": "EDC Electricity",
+      "status": "posted",
+      "bookedAt": "2026-08-19T04:10:39.279Z"
+    },
+    {
+      "id": "txn_acc_1_51",
+      "userId": "usr_1",
+      "accountId": "acc_1",
+      "type": "debit",
+      "amount": {
+        "amount": 10140,
+        "currency": "USD"
+      },
+      "description": "Card payment — Brown Coffee",
+      "category": "Dining",
+      "counterparty": "Brown Coffee",
+      "status": "posted",
+      "bookedAt": "2026-08-17T16:21:19.510Z"
+    },
+    {
+      "id": "txn_acc_1_52",
+      "userId": "usr_1",
+      "accountId": "acc_1",
+      "type": "debit",
+      "amount": {
+        "amount": 13083,
+        "currency": "USD"
+      },
+      "description": "Card payment — Tela Fuel",
+      "category": "Transport",
+      "counterparty": "Tela Fuel",
+      "status": "posted",
+      "bookedAt": "2026-08-16T14:12:20.265Z"
+    },
+    {
+      "id": "txn_acc_1_53",
+      "userId": "usr_1",
+      "accountId": "acc_1",
+      "type": "debit",
+      "amount": {
+        "amount": 14559,
+        "currency": "USD"
+      },
+      "description": "Card payment — Smart Axiata",
+      "category": "Telecom",
+      "counterparty": "Smart Axiata",
+      "status": "posted",
+      "bookedAt": "2026-08-16T03:27:20.423Z"
+    },
+    {
+      "id": "txn_acc_1_54",
+      "userId": "usr_1",
+      "accountId": "acc_1",
+      "type": "debit",
+      "amount": {
+        "amount": 16789,
+        "currency": "USD"
+      },
+      "description": "Card payment — Aeon Mall",
+      "category": "Shopping",
+      "counterparty": "Aeon Mall",
+      "status": "posted",
+      "bookedAt": "2026-08-15T07:26:18.043Z"
+    },
+    {
+      "id": "txn_acc_1_55",
+      "userId": "usr_1",
+      "accountId": "acc_1",
+      "type": "debit",
+      "amount": {
+        "amount": 6050,
+        "currency": "USD"
+      },
+      "description": "Card payment — Brown Coffee",
+      "category": "Dining",
+      "counterparty": "Brown Coffee",
+      "status": "posted",
+      "bookedAt": "2026-08-13T17:41:50.002Z"
+    },
+    {
+      "id": "txn_acc_1_56",
+      "userId": "usr_1",
+      "accountId": "acc_1",
+      "type": "debit",
+      "amount": {
+        "amount": 10383,
+        "currency": "USD"
+      },
+      "description": "Card payment — EDC Electricity",
+      "category": "Utilities",
+      "counterparty": "EDC Electricity",
+      "status": "posted",
+      "bookedAt": "2026-08-13T06:08:09.597Z"
+    },
+    {
+      "id": "txn_acc_2_56",
+      "userId": "usr_1",
+      "accountId": "acc_2",
+      "type": "debit",
+      "amount": {
+        "amount": 770,
+        "currency": "USD"
+      },
+      "description": "Card payment — Aeon Mall",
+      "category": "Shopping",
+      "counterparty": "Aeon Mall",
+      "status": "posted",
+      "bookedAt": "2026-08-12T19:11:55.019Z"
+    },
+    {
+      "id": "txn_acc_3_56",
+      "userId": "usr_1",
+      "accountId": "acc_3",
+      "type": "credit",
+      "amount": {
+        "amount": 168829800,
+        "currency": "KHR"
+      },
+      "description": "Interest — Interest",
+      "category": "Interest",
+      "counterparty": "Interest",
+      "status": "posted",
+      "bookedAt": "2026-08-12T14:21:13.661Z"
+    },
+    {
+      "id": "txn_acc_1_57",
+      "userId": "usr_1",
+      "accountId": "acc_1",
+      "type": "debit",
+      "amount": {
+        "amount": 14742,
+        "currency": "USD"
+      },
+      "description": "Card payment — Tela Fuel",
+      "category": "Transport",
+      "counterparty": "Tela Fuel",
+      "status": "posted",
+      "bookedAt": "2026-08-11T17:03:51.994Z"
+    },
+    {
+      "id": "txn_acc_1_58",
+      "userId": "usr_1",
+      "accountId": "acc_1",
+      "type": "debit",
+      "amount": {
+        "amount": 5638,
+        "currency": "USD"
+      },
+      "description": "Card payment — Aeon Mall",
+      "category": "Shopping",
+      "counterparty": "Aeon Mall",
+      "status": "posted",
+      "bookedAt": "2026-08-11T01:03:03.288Z"
+    },
+    {
+      "id": "txn_acc_1_59",
+      "userId": "usr_1",
+      "accountId": "acc_1",
+      "type": "debit",
+      "amount": {
+        "amount": 6074,
+        "currency": "USD"
+      },
+      "description": "Card payment — Brown Coffee",
+      "category": "Dining",
+      "counterparty": "Brown Coffee",
+      "status": "posted",
+      "bookedAt": "2026-08-09T18:42:39.526Z"
+    },
+    {
+      "id": "txn_acc_4_60",
+      "userId": "usr_1",
+      "accountId": "acc_4",
+      "type": "debit",
+      "amount": {
+        "amount": 14452,
+        "currency": "USD"
+      },
+      "description": "Card payment — Aeon Mall",
+      "category": "Shopping",
+      "counterparty": "Aeon Mall",
+      "status": "posted",
+      "bookedAt": "2026-08-09T01:58:07.308Z"
+    },
+    {
+      "id": "txn_acc_1_60",
+      "userId": "usr_1",
+      "accountId": "acc_1",
+      "type": "credit",
+      "amount": {
+        "amount": 325000,
+        "currency": "USD"
+      },
+      "description": "Salary — Acme Co. Payroll",
+      "category": "Salary",
+      "counterparty": "Acme Co. Payroll",
+      "status": "posted",
+      "bookedAt": "2026-08-08T13:52:11.193Z"
+    },
+    {
+      "id": "txn_acc_1_61",
+      "userId": "usr_1",
+      "accountId": "acc_1",
+      "type": "debit",
+      "amount": {
+        "amount": 696,
+        "currency": "USD"
+      },
+      "description": "Card payment — Smart Axiata",
+      "category": "Telecom",
+      "counterparty": "Smart Axiata",
+      "status": "posted",
+      "bookedAt": "2026-08-07T19:43:42.458Z"
+    },
+    {
+      "id": "txn_acc_1_62",
+      "userId": "usr_1",
+      "accountId": "acc_1",
+      "type": "credit",
+      "amount": {
+        "amount": 38205,
+        "currency": "USD"
+      },
+      "description": "Transfer — Transfer from Goal Saver",
+      "category": "Transfer",
+      "counterparty": "Transfer from Goal Saver",
+      "status": "posted",
+      "bookedAt": "2026-08-07T06:31:34.632Z"
+    },
+    {
+      "id": "txn_acc_1_63",
+      "userId": "usr_1",
+      "accountId": "acc_1",
+      "type": "credit",
+      "amount": {
+        "amount": 10512,
+        "currency": "USD"
+      },
+      "description": "Transfer — Transfer from Goal Saver",
+      "category": "Transfer",
+      "counterparty": "Transfer from Goal Saver",
+      "status": "posted",
+      "bookedAt": "2026-08-05T18:15:19.302Z"
+    },
+    {
+      "id": "txn_acc_2_64",
+      "userId": "usr_1",
+      "accountId": "acc_2",
+      "type": "credit",
+      "amount": {
+        "amount": 49908,
+        "currency": "USD"
+      },
+      "description": "Salary — Acme Co. Payroll",
+      "category": "Salary",
+      "counterparty": "Acme Co. Payroll",
+      "status": "posted",
+      "bookedAt": "2026-08-04T23:11:33.057Z"
+    },
+    {
+      "id": "txn_acc_3_64",
+      "userId": "usr_1",
+      "accountId": "acc_3",
+      "type": "debit",
+      "amount": {
+        "amount": 29749600,
+        "currency": "KHR"
+      },
+      "description": "Card payment — Brown Coffee",
+      "category": "Dining",
+      "counterparty": "Brown Coffee",
+      "status": "posted",
+      "bookedAt": "2026-08-04T22:55:10.819Z"
+    },
+    {
+      "id": "txn_acc_1_64",
+      "userId": "usr_1",
+      "accountId": "acc_1",
+      "type": "debit",
+      "amount": {
+        "amount": 9020,
+        "currency": "USD"
+      },
+      "description": "Card payment — Aeon Mall",
+      "category": "Shopping",
+      "counterparty": "Aeon Mall",
+      "status": "posted",
+      "bookedAt": "2026-08-04T20:16:24.774Z"
+    },
+    {
+      "id": "txn_acc_1_65",
+      "userId": "usr_1",
+      "accountId": "acc_1",
+      "type": "debit",
+      "amount": {
+        "amount": 15072,
+        "currency": "USD"
+      },
+      "description": "Card payment — EDC Electricity",
+      "category": "Utilities",
+      "counterparty": "EDC Electricity",
+      "status": "posted",
+      "bookedAt": "2026-08-03T19:09:15.179Z"
+    },
+    {
+      "id": "txn_acc_1_66",
+      "userId": "usr_1",
+      "accountId": "acc_1",
+      "type": "debit",
+      "amount": {
+        "amount": 3681,
+        "currency": "USD"
+      },
+      "description": "Card payment — Tela Fuel",
+      "category": "Transport",
+      "counterparty": "Tela Fuel",
+      "status": "posted",
+      "bookedAt": "2026-08-02T23:19:51.618Z"
+    },
+    {
+      "id": "txn_acc_1_67",
+      "userId": "usr_1",
+      "accountId": "acc_1",
+      "type": "debit",
+      "amount": {
+        "amount": 3455,
+        "currency": "USD"
+      },
+      "description": "Card payment — Royal Phnom Penh Hospital",
+      "category": "Health",
+      "counterparty": "Royal Phnom Penh Hospital",
+      "status": "posted",
+      "bookedAt": "2026-08-01T17:45:29.005Z"
+    },
+    {
+      "id": "txn_acc_1_68",
+      "userId": "usr_1",
+      "accountId": "acc_1",
+      "type": "debit",
+      "amount": {
+        "amount": 10548,
+        "currency": "USD"
+      },
+      "description": "Card payment — Grab",
+      "category": "Transport",
+      "counterparty": "Grab",
+      "status": "posted",
+      "bookedAt": "2026-07-31T14:37:31.621Z"
+    },
+    {
+      "id": "txn_acc_1_69",
+      "userId": "usr_1",
+      "accountId": "acc_1",
+      "type": "debit",
+      "amount": {
+        "amount": 7007,
+        "currency": "USD"
+      },
+      "description": "Card payment — Grab",
+      "category": "Transport",
+      "counterparty": "Grab",
+      "status": "posted",
+      "bookedAt": "2026-07-31T12:26:12.899Z"
+    },
+    {
+      "id": "txn_acc_1_70",
+      "userId": "usr_1",
+      "accountId": "acc_1",
+      "type": "credit",
+      "amount": {
+        "amount": 5312,
+        "currency": "USD"
+      },
+      "description": "Interest — Interest",
+      "category": "Interest",
+      "counterparty": "Interest",
+      "status": "posted",
+      "bookedAt": "2026-07-29T13:41:26.007Z"
+    },
+    {
+      "id": "txn_acc_1_71",
+      "userId": "usr_1",
+      "accountId": "acc_1",
+      "type": "debit",
+      "amount": {
+        "amount": 13365,
+        "currency": "USD"
+      },
+      "description": "Card payment — Lucky Supermarket",
+      "category": "Groceries",
+      "counterparty": "Lucky Supermarket",
+      "status": "posted",
+      "bookedAt": "2026-07-28T17:11:33.523Z"
+    },
+    {
+      "id": "txn_acc_2_72",
+      "userId": "usr_1",
+      "accountId": "acc_2",
+      "type": "credit",
+      "amount": {
+        "amount": 30555,
+        "currency": "USD"
+      },
+      "description": "Refund — Refund",
+      "category": "Refund",
+      "counterparty": "Refund",
+      "status": "posted",
+      "bookedAt": "2026-07-28T09:39:45.887Z"
+    },
+    {
+      "id": "txn_acc_3_72",
+      "userId": "usr_1",
+      "accountId": "acc_3",
+      "type": "credit",
+      "amount": {
+        "amount": 244831500,
+        "currency": "KHR"
+      },
+      "description": "Refund — Refund",
+      "category": "Refund",
+      "counterparty": "Refund",
+      "status": "posted",
+      "bookedAt": "2026-07-28T07:43:38.490Z"
+    },
+    {
+      "id": "txn_acc_1_72",
+      "userId": "usr_1",
+      "accountId": "acc_1",
+      "type": "debit",
+      "amount": {
+        "amount": 11838,
+        "currency": "USD"
+      },
+      "description": "Card payment — Brown Coffee",
+      "category": "Dining",
+      "counterparty": "Brown Coffee",
+      "status": "posted",
+      "bookedAt": "2026-07-27T21:24:36.023Z"
+    },
+    {
+      "id": "txn_acc_1_73",
+      "userId": "usr_1",
+      "accountId": "acc_1",
+      "type": "debit",
+      "amount": {
+        "amount": 10002,
+        "currency": "USD"
+      },
+      "description": "Card payment — Grab",
+      "category": "Transport",
+      "counterparty": "Grab",
+      "status": "posted",
+      "bookedAt": "2026-07-26T15:01:14.879Z"
+    },
+    {
+      "id": "txn_acc_1_74",
+      "userId": "usr_1",
+      "accountId": "acc_1",
+      "type": "debit",
+      "amount": {
+        "amount": 1833,
+        "currency": "USD"
+      },
+      "description": "Card payment — Lucky Supermarket",
+      "category": "Groceries",
+      "counterparty": "Lucky Supermarket",
+      "status": "posted",
+      "bookedAt": "2026-07-25T23:22:41.718Z"
+    },
+    {
+      "id": "txn_acc_1_75",
+      "userId": "usr_1",
+      "accountId": "acc_1",
+      "type": "debit",
+      "amount": {
+        "amount": 5204,
+        "currency": "USD"
+      },
+      "description": "Card payment — Brown Coffee",
+      "category": "Dining",
+      "counterparty": "Brown Coffee",
+      "status": "posted",
+      "bookedAt": "2026-07-24T14:40:24.455Z"
+    },
+    {
+      "id": "txn_acc_1_76",
+      "userId": "usr_1",
+      "accountId": "acc_1",
+      "type": "debit",
+      "amount": {
+        "amount": 11259,
+        "currency": "USD"
+      },
+      "description": "Card payment — Smart Axiata",
+      "category": "Telecom",
+      "counterparty": "Smart Axiata",
+      "status": "posted",
+      "bookedAt": "2026-07-23T18:39:48.704Z"
+    },
+    {
+      "id": "txn_acc_1_77",
+      "userId": "usr_1",
+      "accountId": "acc_1",
+      "type": "debit",
+      "amount": {
+        "amount": 8717,
+        "currency": "USD"
+      },
+      "description": "Card payment — Grab",
+      "category": "Transport",
+      "counterparty": "Grab",
+      "status": "posted",
+      "bookedAt": "2026-07-22T18:28:15.103Z"
+    },
+    {
+      "id": "txn_acc_1_78",
+      "userId": "usr_1",
+      "accountId": "acc_1",
+      "type": "debit",
+      "amount": {
+        "amount": 12096,
+        "currency": "USD"
+      },
+      "description": "Card payment — EDC Electricity",
+      "category": "Utilities",
+      "counterparty": "EDC Electricity",
+      "status": "posted",
+      "bookedAt": "2026-07-21T19:24:55.371Z"
+    },
+    {
+      "id": "txn_acc_1_79",
+      "userId": "usr_1",
+      "accountId": "acc_1",
+      "type": "debit",
+      "amount": {
+        "amount": 12113,
+        "currency": "USD"
+      },
+      "description": "Card payment — Lucky Supermarket",
+      "category": "Groceries",
+      "counterparty": "Lucky Supermarket",
+      "status": "posted",
+      "bookedAt": "2026-07-21T07:15:58.463Z"
+    },
+    {
+      "id": "txn_acc_1_80",
+      "userId": "usr_1",
+      "accountId": "acc_1",
+      "type": "debit",
+      "amount": {
+        "amount": 5457,
+        "currency": "USD"
+      },
+      "description": "Card payment — Brown Coffee",
+      "category": "Dining",
+      "counterparty": "Brown Coffee",
+      "status": "posted",
+      "bookedAt": "2026-07-20T00:23:42.609Z"
+    },
+    {
+      "id": "txn_acc_3_80",
+      "userId": "usr_1",
+      "accountId": "acc_3",
+      "type": "debit",
+      "amount": {
+        "amount": 2193500,
+        "currency": "KHR"
+      },
+      "description": "Card payment — Smart Axiata",
+      "category": "Telecom",
+      "counterparty": "Smart Axiata",
+      "status": "posted",
+      "bookedAt": "2026-07-19T23:37:05.547Z"
+    },
+    {
+      "id": "txn_acc_2_80",
+      "userId": "usr_1",
+      "accountId": "acc_2",
+      "type": "debit",
+      "amount": {
+        "amount": 10421,
+        "currency": "USD"
+      },
+      "description": "Card payment — Smart Axiata",
+      "category": "Telecom",
+      "counterparty": "Smart Axiata",
+      "status": "posted",
+      "bookedAt": "2026-07-19T23:17:03.460Z"
+    },
+    {
+      "id": "txn_acc_1_81",
+      "userId": "usr_1",
+      "accountId": "acc_1",
+      "type": "debit",
+      "amount": {
+        "amount": 3556,
+        "currency": "USD"
+      },
+      "description": "Card payment — EDC Electricity",
+      "category": "Utilities",
+      "counterparty": "EDC Electricity",
+      "status": "posted",
+      "bookedAt": "2026-07-18T21:34:29.834Z"
+    },
+    {
+      "id": "txn_acc_1_82",
+      "userId": "usr_1",
+      "accountId": "acc_1",
+      "type": "debit",
+      "amount": {
+        "amount": 12726,
+        "currency": "USD"
+      },
+      "description": "Card payment — Tela Fuel",
+      "category": "Transport",
+      "counterparty": "Tela Fuel",
+      "status": "posted",
+      "bookedAt": "2026-07-18T10:02:38.161Z"
+    },
+    {
+      "id": "txn_acc_1_83",
+      "userId": "usr_1",
+      "accountId": "acc_1",
+      "type": "debit",
+      "amount": {
+        "amount": 11813,
+        "currency": "USD"
+      },
+      "description": "Card payment — Lucky Supermarket",
+      "category": "Groceries",
+      "counterparty": "Lucky Supermarket",
+      "status": "posted",
+      "bookedAt": "2026-07-16T16:01:16.781Z"
+    },
+    {
+      "id": "txn_acc_1_84",
+      "userId": "usr_1",
+      "accountId": "acc_1",
+      "type": "debit",
+      "amount": {
+        "amount": 5237,
+        "currency": "USD"
+      },
+      "description": "Card payment — Smart Axiata",
+      "category": "Telecom",
+      "counterparty": "Smart Axiata",
+      "status": "posted",
+      "bookedAt": "2026-07-15T13:13:00.743Z"
+    },
+    {
+      "id": "txn_acc_1_85",
+      "userId": "usr_1",
+      "accountId": "acc_1",
+      "type": "credit",
+      "amount": {
+        "amount": 22743,
+        "currency": "USD"
+      },
+      "description": "Interest — Interest",
+      "category": "Interest",
+      "counterparty": "Interest",
+      "status": "posted",
+      "bookedAt": "2026-07-15T01:53:54.598Z"
+    },
+    {
+      "id": "txn_acc_1_86",
+      "userId": "usr_1",
+      "accountId": "acc_1",
+      "type": "credit",
+      "amount": {
+        "amount": 26179,
+        "currency": "USD"
+      },
+      "description": "Salary — Acme Co. Payroll",
+      "category": "Salary",
+      "counterparty": "Acme Co. Payroll",
+      "status": "posted",
+      "bookedAt": "2026-07-13T15:21:32.548Z"
+    },
+    {
+      "id": "txn_acc_1_87",
+      "userId": "usr_1",
+      "accountId": "acc_1",
+      "type": "debit",
+      "amount": {
+        "amount": 9234,
+        "currency": "USD"
+      },
+      "description": "Card payment — Lucky Supermarket",
+      "category": "Groceries",
+      "counterparty": "Lucky Supermarket",
+      "status": "posted",
+      "bookedAt": "2026-07-12T22:29:44.619Z"
+    },
+    {
+      "id": "txn_acc_2_88",
+      "userId": "usr_1",
+      "accountId": "acc_2",
+      "type": "credit",
+      "amount": {
+        "amount": 57934,
+        "currency": "USD"
+      },
+      "description": "Refund — Refund",
+      "category": "Refund",
+      "counterparty": "Refund",
+      "status": "posted",
+      "bookedAt": "2026-07-11T23:09:00.493Z"
+    },
+    {
+      "id": "txn_acc_1_88",
+      "userId": "usr_1",
+      "accountId": "acc_1",
+      "type": "debit",
+      "amount": {
+        "amount": 8050,
+        "currency": "USD"
+      },
+      "description": "Card payment — Royal Phnom Penh Hospital",
+      "category": "Health",
+      "counterparty": "Royal Phnom Penh Hospital",
+      "status": "posted",
+      "bookedAt": "2026-07-11T17:27:51.170Z"
+    },
+    {
+      "id": "txn_acc_3_88",
+      "userId": "usr_1",
+      "accountId": "acc_3",
+      "type": "credit",
+      "amount": {
+        "amount": 147423700,
+        "currency": "KHR"
+      },
+      "description": "Transfer — Transfer from Goal Saver",
+      "category": "Transfer",
+      "counterparty": "Transfer from Goal Saver",
+      "status": "posted",
+      "bookedAt": "2026-07-11T14:11:51.620Z"
+    },
+    {
+      "id": "txn_acc_1_89",
+      "userId": "usr_1",
+      "accountId": "acc_1",
+      "type": "debit",
+      "amount": {
+        "amount": 12709,
+        "currency": "USD"
+      },
+      "description": "Card payment — Lucky Supermarket",
+      "category": "Groceries",
+      "counterparty": "Lucky Supermarket",
+      "status": "posted",
+      "bookedAt": "2026-07-11T04:01:57.788Z"
+    },
+    {
+      "id": "txn_acc_4_90",
+      "userId": "usr_1",
+      "accountId": "acc_4",
+      "type": "credit",
+      "amount": {
+        "amount": 54826,
+        "currency": "USD"
+      },
+      "description": "Transfer — Transfer from Goal Saver",
+      "category": "Transfer",
+      "counterparty": "Transfer from Goal Saver",
+      "status": "posted",
+      "bookedAt": "2026-07-10T11:43:11.658Z"
+    },
+    {
+      "id": "txn_acc_1_90",
+      "userId": "usr_1",
+      "accountId": "acc_1",
+      "type": "credit",
+      "amount": {
+        "amount": 325000,
+        "currency": "USD"
+      },
+      "description": "Salary — Acme Co. Payroll",
+      "category": "Salary",
+      "counterparty": "Acme Co. Payroll",
+      "status": "posted",
+      "bookedAt": "2026-07-10T07:14:49.937Z"
+    },
+    {
+      "id": "txn_acc_1_91",
+      "userId": "usr_1",
+      "accountId": "acc_1",
+      "type": "debit",
+      "amount": {
+        "amount": 11137,
+        "currency": "USD"
+      },
+      "description": "Card payment — Brown Coffee",
+      "category": "Dining",
+      "counterparty": "Brown Coffee",
+      "status": "posted",
+      "bookedAt": "2026-07-09T04:25:43.807Z"
+    },
+    {
+      "id": "txn_acc_1_92",
+      "userId": "usr_1",
+      "accountId": "acc_1",
+      "type": "debit",
+      "amount": {
+        "amount": 16111,
+        "currency": "USD"
+      },
+      "description": "Card payment — Aeon Mall",
+      "category": "Shopping",
+      "counterparty": "Aeon Mall",
+      "status": "posted",
+      "bookedAt": "2026-07-07T17:30:47.570Z"
+    },
+    {
+      "id": "txn_acc_1_93",
+      "userId": "usr_1",
+      "accountId": "acc_1",
+      "type": "debit",
+      "amount": {
+        "amount": 6083,
+        "currency": "USD"
+      },
+      "description": "Card payment — Aeon Mall",
+      "category": "Shopping",
+      "counterparty": "Aeon Mall",
+      "status": "posted",
+      "bookedAt": "2026-07-06T14:22:08.862Z"
+    },
+    {
+      "id": "txn_acc_1_94",
+      "userId": "usr_1",
+      "accountId": "acc_1",
+      "type": "debit",
+      "amount": {
+        "amount": 15159,
+        "currency": "USD"
+      },
+      "description": "Card payment — Tela Fuel",
+      "category": "Transport",
+      "counterparty": "Tela Fuel",
+      "status": "posted",
+      "bookedAt": "2026-07-06T01:27:23.441Z"
+    },
+    {
+      "id": "txn_acc_1_95",
+      "userId": "usr_1",
+      "accountId": "acc_1",
+      "type": "debit",
+      "amount": {
+        "amount": 9496,
+        "currency": "USD"
+      },
+      "description": "Card payment — Lucky Supermarket",
+      "category": "Groceries",
+      "counterparty": "Lucky Supermarket",
+      "status": "posted",
+      "bookedAt": "2026-07-05T05:04:11.231Z"
+    },
+    {
+      "id": "txn_acc_1_96",
+      "userId": "usr_1",
+      "accountId": "acc_1",
+      "type": "debit",
+      "amount": {
+        "amount": 10483,
+        "currency": "USD"
+      },
+      "description": "Card payment — Brown Coffee",
+      "category": "Dining",
+      "counterparty": "Brown Coffee",
+      "status": "posted",
+      "bookedAt": "2026-07-04T01:01:29.305Z"
+    },
+    {
+      "id": "txn_acc_3_96",
+      "userId": "usr_1",
+      "accountId": "acc_3",
+      "type": "credit",
+      "amount": {
+        "amount": 91290600,
+        "currency": "KHR"
+      },
+      "description": "Interest — Interest",
+      "category": "Interest",
+      "counterparty": "Interest",
+      "status": "posted",
+      "bookedAt": "2026-07-04T00:47:32.367Z"
+    },
+    {
+      "id": "txn_acc_2_96",
+      "userId": "usr_1",
+      "accountId": "acc_2",
+      "type": "debit",
+      "amount": {
+        "amount": 1578,
+        "currency": "USD"
+      },
+      "description": "Card payment — Brown Coffee",
+      "category": "Dining",
+      "counterparty": "Brown Coffee",
+      "status": "posted",
+      "bookedAt": "2026-07-03T23:24:53.326Z"
+    },
+    {
+      "id": "txn_acc_1_97",
+      "userId": "usr_1",
+      "accountId": "acc_1",
+      "type": "credit",
+      "amount": {
+        "amount": 25630,
+        "currency": "USD"
+      },
+      "description": "Refund — Refund",
+      "category": "Refund",
+      "counterparty": "Refund",
+      "status": "posted",
+      "bookedAt": "2026-07-02T16:40:21.137Z"
+    },
+    {
+      "id": "txn_acc_1_98",
+      "userId": "usr_1",
+      "accountId": "acc_1",
+      "type": "debit",
+      "amount": {
+        "amount": 12835,
+        "currency": "USD"
+      },
+      "description": "Card payment — Tela Fuel",
+      "category": "Transport",
+      "counterparty": "Tela Fuel",
+      "status": "posted",
+      "bookedAt": "2026-07-02T06:46:02.209Z"
+    },
+    {
+      "id": "txn_acc_1_99",
+      "userId": "usr_1",
+      "accountId": "acc_1",
+      "type": "debit",
+      "amount": {
+        "amount": 6526,
+        "currency": "USD"
+      },
+      "description": "Card payment — Royal Phnom Penh Hospital",
+      "category": "Health",
+      "counterparty": "Royal Phnom Penh Hospital",
+      "status": "posted",
+      "bookedAt": "2026-06-30T19:53:43.847Z"
+    },
+    {
+      "id": "txn_acc_1_100",
+      "userId": "usr_1",
+      "accountId": "acc_1",
+      "type": "debit",
+      "amount": {
+        "amount": 9165,
+        "currency": "USD"
+      },
+      "description": "Card payment — Grab",
+      "category": "Transport",
+      "counterparty": "Grab",
+      "status": "posted",
+      "bookedAt": "2026-06-29T15:56:37.271Z"
+    },
+    {
+      "id": "txn_acc_1_101",
+      "userId": "usr_1",
+      "accountId": "acc_1",
+      "type": "debit",
+      "amount": {
+        "amount": 14122,
+        "currency": "USD"
+      },
+      "description": "Card payment — Aeon Mall",
+      "category": "Shopping",
+      "counterparty": "Aeon Mall",
+      "status": "posted",
+      "bookedAt": "2026-06-28T20:09:30.093Z"
+    },
+    {
+      "id": "txn_acc_1_102",
+      "userId": "usr_1",
+      "accountId": "acc_1",
+      "type": "credit",
+      "amount": {
+        "amount": 29171,
+        "currency": "USD"
+      },
+      "description": "Interest — Interest",
+      "category": "Interest",
+      "counterparty": "Interest",
+      "status": "posted",
+      "bookedAt": "2026-06-28T06:55:24.065Z"
+    },
+    {
+      "id": "txn_acc_1_103",
+      "userId": "usr_1",
+      "accountId": "acc_1",
+      "type": "debit",
+      "amount": {
+        "amount": 6583,
+        "currency": "USD"
+      },
+      "description": "Card payment — Tela Fuel",
+      "category": "Transport",
+      "counterparty": "Tela Fuel",
+      "status": "posted",
+      "bookedAt": "2026-06-27T03:54:14.747Z"
+    },
+    {
+      "id": "txn_acc_1_104",
+      "userId": "usr_1",
+      "accountId": "acc_1",
+      "type": "debit",
+      "amount": {
+        "amount": 15633,
+        "currency": "USD"
+      },
+      "description": "Card payment — Smart Axiata",
+      "category": "Telecom",
+      "counterparty": "Smart Axiata",
+      "status": "posted",
+      "bookedAt": "2026-06-26T06:53:48.151Z"
+    },
+    {
+      "id": "txn_acc_3_104",
+      "userId": "usr_1",
+      "accountId": "acc_3",
+      "type": "credit",
+      "amount": {
+        "amount": 10307400,
+        "currency": "KHR"
+      },
+      "description": "Transfer — Transfer from Goal Saver",
+      "category": "Transfer",
+      "counterparty": "Transfer from Goal Saver",
+      "status": "posted",
+      "bookedAt": "2026-06-26T02:47:37.737Z"
+    },
+    {
+      "id": "txn_acc_2_104",
+      "userId": "usr_1",
+      "accountId": "acc_2",
+      "type": "credit",
+      "amount": {
+        "amount": 44723,
+        "currency": "USD"
+      },
+      "description": "Salary — Acme Co. Payroll",
+      "category": "Salary",
+      "counterparty": "Acme Co. Payroll",
+      "status": "posted",
+      "bookedAt": "2026-06-25T15:33:39.712Z"
+    },
+    {
+      "id": "txn_acc_1_105",
+      "userId": "usr_1",
+      "accountId": "acc_1",
+      "type": "debit",
+      "amount": {
+        "amount": 6527,
+        "currency": "USD"
+      },
+      "description": "Card payment — Tela Fuel",
+      "category": "Transport",
+      "counterparty": "Tela Fuel",
+      "status": "posted",
+      "bookedAt": "2026-06-25T09:34:27.565Z"
+    },
+    {
+      "id": "txn_acc_1_106",
+      "userId": "usr_1",
+      "accountId": "acc_1",
+      "type": "debit",
+      "amount": {
+        "amount": 8842,
+        "currency": "USD"
+      },
+      "description": "Card payment — Aeon Mall",
+      "category": "Shopping",
+      "counterparty": "Aeon Mall",
+      "status": "posted",
+      "bookedAt": "2026-06-24T07:26:43.007Z"
+    },
+    {
+      "id": "txn_acc_1_107",
+      "userId": "usr_1",
+      "accountId": "acc_1",
+      "type": "debit",
+      "amount": {
+        "amount": 474,
+        "currency": "USD"
+      },
+      "description": "Card payment — Royal Phnom Penh Hospital",
+      "category": "Health",
+      "counterparty": "Royal Phnom Penh Hospital",
+      "status": "posted",
+      "bookedAt": "2026-06-23T02:47:30.191Z"
+    },
+    {
+      "id": "txn_acc_1_108",
+      "userId": "usr_1",
+      "accountId": "acc_1",
+      "type": "credit",
+      "amount": {
+        "amount": 50453,
+        "currency": "USD"
+      },
+      "description": "Interest — Interest",
+      "category": "Interest",
+      "counterparty": "Interest",
+      "status": "posted",
+      "bookedAt": "2026-06-22T10:13:13.111Z"
+    },
+    {
+      "id": "txn_acc_1_109",
+      "userId": "usr_1",
+      "accountId": "acc_1",
+      "type": "debit",
+      "amount": {
+        "amount": 9068,
+        "currency": "USD"
+      },
+      "description": "Card payment — Brown Coffee",
+      "category": "Dining",
+      "counterparty": "Brown Coffee",
+      "status": "posted",
+      "bookedAt": "2026-06-21T08:35:58.728Z"
+    },
+    {
+      "id": "txn_acc_1_110",
+      "userId": "usr_1",
+      "accountId": "acc_1",
+      "type": "debit",
+      "amount": {
+        "amount": 5450,
+        "currency": "USD"
+      },
+      "description": "Card payment — Smart Axiata",
+      "category": "Telecom",
+      "counterparty": "Smart Axiata",
+      "status": "posted",
+      "bookedAt": "2026-06-19T21:50:45.462Z"
+    },
+    {
+      "id": "txn_acc_1_111",
+      "userId": "usr_1",
+      "accountId": "acc_1",
+      "type": "credit",
+      "amount": {
+        "amount": 19410,
+        "currency": "USD"
+      },
+      "description": "Refund — Refund",
+      "category": "Refund",
+      "counterparty": "Refund",
+      "status": "posted",
+      "bookedAt": "2026-06-19T07:25:17.480Z"
+    },
+    {
+      "id": "txn_acc_3_112",
+      "userId": "usr_1",
+      "accountId": "acc_3",
+      "type": "credit",
+      "amount": {
+        "amount": 221199100,
+        "currency": "KHR"
+      },
+      "description": "Transfer — Transfer from Goal Saver",
+      "category": "Transfer",
+      "counterparty": "Transfer from Goal Saver",
+      "status": "posted",
+      "bookedAt": "2026-06-18T07:00:43.812Z"
+    },
+    {
+      "id": "txn_acc_1_112",
+      "userId": "usr_1",
+      "accountId": "acc_1",
+      "type": "debit",
+      "amount": {
+        "amount": 6975,
+        "currency": "USD"
+      },
+      "description": "Card payment — Grab",
+      "category": "Transport",
+      "counterparty": "Grab",
+      "status": "posted",
+      "bookedAt": "2026-06-18T05:01:38.871Z"
+    },
+    {
+      "id": "txn_acc_2_112",
+      "userId": "usr_1",
+      "accountId": "acc_2",
+      "type": "credit",
+      "amount": {
+        "amount": 39645,
+        "currency": "USD"
+      },
+      "description": "Salary — Acme Co. Payroll",
+      "category": "Salary",
+      "counterparty": "Acme Co. Payroll",
+      "status": "posted",
+      "bookedAt": "2026-06-18T04:40:18.394Z"
+    },
+    {
+      "id": "txn_acc_1_113",
+      "userId": "usr_1",
+      "accountId": "acc_1",
+      "type": "debit",
+      "amount": {
+        "amount": 581,
+        "currency": "USD"
+      },
+      "description": "Card payment — Tela Fuel",
+      "category": "Transport",
+      "counterparty": "Tela Fuel",
+      "status": "posted",
+      "bookedAt": "2026-06-17T05:47:19.587Z"
+    },
+    {
+      "id": "txn_acc_1_114",
+      "userId": "usr_1",
+      "accountId": "acc_1",
+      "type": "debit",
+      "amount": {
+        "amount": 5083,
+        "currency": "USD"
+      },
+      "description": "Card payment — Grab",
+      "category": "Transport",
+      "counterparty": "Grab",
+      "status": "posted",
+      "bookedAt": "2026-06-16T10:11:01.838Z"
+    },
+    {
+      "id": "txn_acc_1_115",
+      "userId": "usr_1",
+      "accountId": "acc_1",
+      "type": "debit",
+      "amount": {
+        "amount": 14178,
+        "currency": "USD"
+      },
+      "description": "Card payment — Brown Coffee",
+      "category": "Dining",
+      "counterparty": "Brown Coffee",
+      "status": "posted",
+      "bookedAt": "2026-06-15T06:28:51.236Z"
+    },
+    {
+      "id": "txn_acc_1_116",
+      "userId": "usr_1",
+      "accountId": "acc_1",
+      "type": "debit",
+      "amount": {
+        "amount": 10971,
+        "currency": "USD"
+      },
+      "description": "Card payment — EDC Electricity",
+      "category": "Utilities",
+      "counterparty": "EDC Electricity",
+      "status": "posted",
+      "bookedAt": "2026-06-14T11:54:48.530Z"
+    },
+    {
+      "id": "txn_acc_1_117",
+      "userId": "usr_1",
+      "accountId": "acc_1",
+      "type": "debit",
+      "amount": {
+        "amount": 2229,
+        "currency": "USD"
+      },
+      "description": "Card payment — Lucky Supermarket",
+      "category": "Groceries",
+      "counterparty": "Lucky Supermarket",
+      "status": "posted",
+      "bookedAt": "2026-06-12T21:43:57.923Z"
+    },
+    {
+      "id": "txn_acc_1_118",
+      "userId": "usr_1",
+      "accountId": "acc_1",
+      "type": "debit",
+      "amount": {
+        "amount": 5856,
+        "currency": "USD"
+      },
+      "description": "Card payment — Smart Axiata",
+      "category": "Telecom",
+      "counterparty": "Smart Axiata",
+      "status": "posted",
+      "bookedAt": "2026-06-11T21:11:18.470Z"
+    },
+    {
+      "id": "txn_acc_1_119",
+      "userId": "usr_1",
+      "accountId": "acc_1",
+      "type": "credit",
+      "amount": {
+        "amount": 12683,
+        "currency": "USD"
+      },
+      "description": "Salary — Acme Co. Payroll",
+      "category": "Salary",
+      "counterparty": "Acme Co. Payroll",
+      "status": "posted",
+      "bookedAt": "2026-06-10T14:46:40.940Z"
+    },
+    {
+      "id": "txn_acc_3_120",
+      "userId": "usr_1",
+      "accountId": "acc_3",
+      "type": "credit",
+      "amount": {
+        "amount": 98342600,
+        "currency": "KHR"
+      },
+      "description": "Refund — Refund",
+      "category": "Refund",
+      "counterparty": "Refund",
+      "status": "posted",
+      "bookedAt": "2026-06-10T00:34:09.310Z"
+    },
+    {
+      "id": "txn_acc_4_120",
+      "userId": "usr_1",
+      "accountId": "acc_4",
+      "type": "credit",
+      "amount": {
+        "amount": 3126,
+        "currency": "USD"
+      },
+      "description": "Transfer — Transfer from Goal Saver",
+      "category": "Transfer",
+      "counterparty": "Transfer from Goal Saver",
+      "status": "posted",
+      "bookedAt": "2026-06-09T14:33:59.796Z"
+    },
+    {
+      "id": "txn_acc_1_120",
+      "userId": "usr_1",
+      "accountId": "acc_1",
+      "type": "credit",
+      "amount": {
+        "amount": 325000,
+        "currency": "USD"
+      },
+      "description": "Salary — Acme Co. Payroll",
+      "category": "Salary",
+      "counterparty": "Acme Co. Payroll",
+      "status": "posted",
+      "bookedAt": "2026-06-09T13:54:54.417Z"
+    },
+    {
+      "id": "txn_acc_2_120",
+      "userId": "usr_1",
+      "accountId": "acc_2",
+      "type": "credit",
+      "amount": {
+        "amount": 20209,
+        "currency": "USD"
+      },
+      "description": "Refund — Refund",
+      "category": "Refund",
+      "counterparty": "Refund",
+      "status": "posted",
+      "bookedAt": "2026-06-09T13:01:27.936Z"
+    },
+    {
+      "id": "txn_acc_1_121",
+      "userId": "usr_1",
+      "accountId": "acc_1",
+      "type": "debit",
+      "amount": {
+        "amount": 16566,
+        "currency": "USD"
+      },
+      "description": "Card payment — Tela Fuel",
+      "category": "Transport",
+      "counterparty": "Tela Fuel",
+      "status": "posted",
+      "bookedAt": "2026-06-09T11:54:49.112Z"
+    },
+    {
+      "id": "txn_acc_1_122",
+      "userId": "usr_1",
+      "accountId": "acc_1",
+      "type": "debit",
+      "amount": {
+        "amount": 4101,
+        "currency": "USD"
+      },
+      "description": "Card payment — Lucky Supermarket",
+      "category": "Groceries",
+      "counterparty": "Lucky Supermarket",
+      "status": "posted",
+      "bookedAt": "2026-06-08T06:44:16.207Z"
+    },
+    {
+      "id": "txn_acc_1_123",
+      "userId": "usr_1",
+      "accountId": "acc_1",
+      "type": "debit",
+      "amount": {
+        "amount": 14326,
+        "currency": "USD"
+      },
+      "description": "Card payment — Aeon Mall",
+      "category": "Shopping",
+      "counterparty": "Aeon Mall",
+      "status": "posted",
+      "bookedAt": "2026-06-06T17:49:04.307Z"
+    },
+    {
+      "id": "txn_acc_1_124",
+      "userId": "usr_1",
+      "accountId": "acc_1",
+      "type": "debit",
+      "amount": {
+        "amount": 10342,
+        "currency": "USD"
+      },
+      "description": "Card payment — Tela Fuel",
+      "category": "Transport",
+      "counterparty": "Tela Fuel",
+      "status": "posted",
+      "bookedAt": "2026-06-06T11:24:25.059Z"
+    },
+    {
+      "id": "txn_acc_1_125",
+      "userId": "usr_1",
+      "accountId": "acc_1",
+      "type": "debit",
+      "amount": {
+        "amount": 7993,
+        "currency": "USD"
+      },
+      "description": "Card payment — Grab",
+      "category": "Transport",
+      "counterparty": "Grab",
+      "status": "posted",
+      "bookedAt": "2026-06-05T01:02:20.279Z"
+    },
+    {
+      "id": "txn_acc_1_126",
+      "userId": "usr_1",
+      "accountId": "acc_1",
+      "type": "debit",
+      "amount": {
+        "amount": 7059,
+        "currency": "USD"
+      },
+      "description": "Card payment — Royal Phnom Penh Hospital",
+      "category": "Health",
+      "counterparty": "Royal Phnom Penh Hospital",
+      "status": "posted",
+      "bookedAt": "2026-06-03T16:37:42.293Z"
+    },
+    {
+      "id": "txn_acc_1_127",
+      "userId": "usr_1",
+      "accountId": "acc_1",
+      "type": "debit",
+      "amount": {
+        "amount": 15706,
+        "currency": "USD"
+      },
+      "description": "Card payment — Smart Axiata",
+      "category": "Telecom",
+      "counterparty": "Smart Axiata",
+      "status": "posted",
+      "bookedAt": "2026-06-02T22:20:04.371Z"
+    },
+    {
+      "id": "txn_acc_3_128",
+      "userId": "usr_1",
+      "accountId": "acc_3",
+      "type": "credit",
+      "amount": {
+        "amount": 168288600,
+        "currency": "KHR"
+      },
+      "description": "Salary — Acme Co. Payroll",
+      "category": "Salary",
+      "counterparty": "Acme Co. Payroll",
+      "status": "posted",
+      "bookedAt": "2026-06-01T19:27:34.430Z"
+    },
+    {
+      "id": "txn_acc_2_128",
+      "userId": "usr_1",
+      "accountId": "acc_2",
+      "type": "credit",
+      "amount": {
+        "amount": 46907,
+        "currency": "USD"
+      },
+      "description": "Refund — Refund",
+      "category": "Refund",
+      "counterparty": "Refund",
+      "status": "posted",
+      "bookedAt": "2026-06-01T17:08:24.515Z"
+    },
+    {
+      "id": "txn_acc_1_128",
+      "userId": "usr_1",
+      "accountId": "acc_1",
+      "type": "debit",
+      "amount": {
+        "amount": 12722,
+        "currency": "USD"
+      },
+      "description": "Card payment — Smart Axiata",
+      "category": "Telecom",
+      "counterparty": "Smart Axiata",
+      "status": "posted",
+      "bookedAt": "2026-06-01T16:27:30.027Z"
+    },
+    {
+      "id": "txn_acc_1_129",
+      "userId": "usr_1",
+      "accountId": "acc_1",
+      "type": "debit",
+      "amount": {
+        "amount": 10555,
+        "currency": "USD"
+      },
+      "description": "Card payment — Brown Coffee",
+      "category": "Dining",
+      "counterparty": "Brown Coffee",
+      "status": "posted",
+      "bookedAt": "2026-05-31T20:23:51.379Z"
+    },
+    {
+      "id": "txn_acc_1_130",
+      "userId": "usr_1",
+      "accountId": "acc_1",
+      "type": "debit",
+      "amount": {
+        "amount": 11823,
+        "currency": "USD"
+      },
+      "description": "Card payment — Royal Phnom Penh Hospital",
+      "category": "Health",
+      "counterparty": "Royal Phnom Penh Hospital",
+      "status": "posted",
+      "bookedAt": "2026-05-30T19:51:06.252Z"
+    },
+    {
+      "id": "txn_acc_1_131",
+      "userId": "usr_1",
+      "accountId": "acc_1",
+      "type": "debit",
+      "amount": {
+        "amount": 14197,
+        "currency": "USD"
+      },
+      "description": "Card payment — Lucky Supermarket",
+      "category": "Groceries",
+      "counterparty": "Lucky Supermarket",
+      "status": "posted",
+      "bookedAt": "2026-05-29T19:04:10.594Z"
+    },
+    {
+      "id": "txn_acc_1_132",
+      "userId": "usr_1",
+      "accountId": "acc_1",
+      "type": "debit",
+      "amount": {
+        "amount": 16868,
+        "currency": "USD"
+      },
+      "description": "Card payment — Lucky Supermarket",
+      "category": "Groceries",
+      "counterparty": "Lucky Supermarket",
+      "status": "posted",
+      "bookedAt": "2026-05-29T11:45:59.210Z"
+    },
+    {
+      "id": "txn_acc_1_133",
+      "userId": "usr_1",
+      "accountId": "acc_1",
+      "type": "debit",
+      "amount": {
+        "amount": 8449,
+        "currency": "USD"
+      },
+      "description": "Card payment — Tela Fuel",
+      "category": "Transport",
+      "counterparty": "Tela Fuel",
+      "status": "posted",
+      "bookedAt": "2026-05-28T08:39:00.544Z"
+    },
+    {
+      "id": "txn_acc_1_134",
+      "userId": "usr_1",
+      "accountId": "acc_1",
+      "type": "debit",
+      "amount": {
+        "amount": 1532,
+        "currency": "USD"
+      },
+      "description": "Card payment — Lucky Supermarket",
+      "category": "Groceries",
+      "counterparty": "Lucky Supermarket",
+      "status": "posted",
+      "bookedAt": "2026-05-26T18:52:25.198Z"
+    },
+    {
+      "id": "txn_acc_1_135",
+      "userId": "usr_1",
+      "accountId": "acc_1",
+      "type": "credit",
+      "amount": {
+        "amount": 55526,
+        "currency": "USD"
+      },
+      "description": "Salary — Acme Co. Payroll",
+      "category": "Salary",
+      "counterparty": "Acme Co. Payroll",
+      "status": "posted",
+      "bookedAt": "2026-05-25T14:12:23.562Z"
+    },
+    {
+      "id": "txn_acc_1_136",
+      "userId": "usr_1",
+      "accountId": "acc_1",
+      "type": "debit",
+      "amount": {
+        "amount": 11237,
+        "currency": "USD"
+      },
+      "description": "Card payment — Tela Fuel",
+      "category": "Transport",
+      "counterparty": "Tela Fuel",
+      "status": "posted",
+      "bookedAt": "2026-05-25T08:30:58.062Z"
+    },
+    {
+      "id": "txn_acc_3_136",
+      "userId": "usr_1",
+      "accountId": "acc_3",
+      "type": "debit",
+      "amount": {
+        "amount": 51942900,
+        "currency": "KHR"
+      },
+      "description": "Card payment — Royal Phnom Penh Hospital",
+      "category": "Health",
+      "counterparty": "Royal Phnom Penh Hospital",
+      "status": "posted",
+      "bookedAt": "2026-05-25T00:57:17.098Z"
+    },
+    {
+      "id": "txn_acc_2_136",
+      "userId": "usr_1",
+      "accountId": "acc_2",
+      "type": "credit",
+      "amount": {
+        "amount": 17466,
+        "currency": "USD"
+      },
+      "description": "Transfer — Transfer from Goal Saver",
+      "category": "Transfer",
+      "counterparty": "Transfer from Goal Saver",
+      "status": "posted",
+      "bookedAt": "2026-05-24T14:15:21.869Z"
+    },
+    {
+      "id": "txn_acc_1_137",
+      "userId": "usr_1",
+      "accountId": "acc_1",
+      "type": "debit",
+      "amount": {
+        "amount": 6263,
+        "currency": "USD"
+      },
+      "description": "Card payment — Lucky Supermarket",
+      "category": "Groceries",
+      "counterparty": "Lucky Supermarket",
+      "status": "posted",
+      "bookedAt": "2026-05-23T19:51:41.416Z"
+    },
+    {
+      "id": "txn_acc_1_138",
+      "userId": "usr_1",
+      "accountId": "acc_1",
+      "type": "debit",
+      "amount": {
+        "amount": 8297,
+        "currency": "USD"
+      },
+      "description": "Card payment — Royal Phnom Penh Hospital",
+      "category": "Health",
+      "counterparty": "Royal Phnom Penh Hospital",
+      "status": "posted",
+      "bookedAt": "2026-05-23T07:10:32.973Z"
+    },
+    {
+      "id": "txn_acc_1_139",
+      "userId": "usr_1",
+      "accountId": "acc_1",
+      "type": "credit",
+      "amount": {
+        "amount": 23356,
+        "currency": "USD"
+      },
+      "description": "Salary — Acme Co. Payroll",
+      "category": "Salary",
+      "counterparty": "Acme Co. Payroll",
+      "status": "posted",
+      "bookedAt": "2026-05-21T16:05:55.033Z"
+    },
+    {
+      "id": "txn_acc_1_140",
+      "userId": "usr_1",
+      "accountId": "acc_1",
+      "type": "credit",
+      "amount": {
+        "amount": 59016,
+        "currency": "USD"
+      },
+      "description": "Transfer — Transfer from Goal Saver",
+      "category": "Transfer",
+      "counterparty": "Transfer from Goal Saver",
+      "status": "posted",
+      "bookedAt": "2026-05-21T06:12:51.522Z"
+    },
+    {
+      "id": "txn_acc_1_141",
+      "userId": "usr_1",
+      "accountId": "acc_1",
+      "type": "debit",
+      "amount": {
+        "amount": 16270,
+        "currency": "USD"
+      },
+      "description": "Card payment — Tela Fuel",
+      "category": "Transport",
+      "counterparty": "Tela Fuel",
+      "status": "posted",
+      "bookedAt": "2026-05-19T17:42:05.183Z"
+    },
+    {
+      "id": "txn_acc_1_142",
+      "userId": "usr_1",
+      "accountId": "acc_1",
+      "type": "debit",
+      "amount": {
+        "amount": 2573,
+        "currency": "USD"
+      },
+      "description": "Card payment — Lucky Supermarket",
+      "category": "Groceries",
+      "counterparty": "Lucky Supermarket",
+      "status": "posted",
+      "bookedAt": "2026-05-18T22:07:56.714Z"
+    },
+    {
+      "id": "txn_acc_1_143",
+      "userId": "usr_1",
+      "accountId": "acc_1",
+      "type": "debit",
+      "amount": {
+        "amount": 16530,
+        "currency": "USD"
+      },
+      "description": "Card payment — Smart Axiata",
+      "category": "Telecom",
+      "counterparty": "Smart Axiata",
+      "status": "posted",
+      "bookedAt": "2026-05-17T15:29:08.536Z"
+    },
+    {
+      "id": "txn_acc_3_144",
+      "userId": "usr_1",
+      "accountId": "acc_3",
+      "type": "credit",
+      "amount": {
+        "amount": 149838600,
+        "currency": "KHR"
+      },
+      "description": "Interest — Interest",
+      "category": "Interest",
+      "counterparty": "Interest",
+      "status": "posted",
+      "bookedAt": "2026-05-17T07:49:19.433Z"
+    },
+    {
+      "id": "txn_acc_1_144",
+      "userId": "usr_1",
+      "accountId": "acc_1",
+      "type": "debit",
+      "amount": {
+        "amount": 11611,
+        "currency": "USD"
+      },
+      "description": "Card payment — EDC Electricity",
+      "category": "Utilities",
+      "counterparty": "EDC Electricity",
+      "status": "posted",
+      "bookedAt": "2026-05-17T04:04:49.172Z"
+    },
+    {
+      "id": "txn_acc_2_144",
+      "userId": "usr_1",
+      "accountId": "acc_2",
+      "type": "credit",
+      "amount": {
+        "amount": 41129,
+        "currency": "USD"
+      },
+      "description": "Interest — Interest",
+      "category": "Interest",
+      "counterparty": "Interest",
+      "status": "posted",
+      "bookedAt": "2026-05-16T21:11:27.195Z"
+    },
+    {
+      "id": "txn_acc_1_145",
+      "userId": "usr_1",
+      "accountId": "acc_1",
+      "type": "debit",
+      "amount": {
+        "amount": 11226,
+        "currency": "USD"
+      },
+      "description": "Card payment — Tela Fuel",
+      "category": "Transport",
+      "counterparty": "Tela Fuel",
+      "status": "posted",
+      "bookedAt": "2026-05-15T18:40:38.051Z"
+    },
+    {
+      "id": "txn_acc_1_146",
+      "userId": "usr_1",
+      "accountId": "acc_1",
+      "type": "debit",
+      "amount": {
+        "amount": 16684,
+        "currency": "USD"
+      },
+      "description": "Card payment — Grab",
+      "category": "Transport",
+      "counterparty": "Grab",
+      "status": "posted",
+      "bookedAt": "2026-05-15T04:22:31.016Z"
+    },
+    {
+      "id": "txn_acc_1_147",
+      "userId": "usr_1",
+      "accountId": "acc_1",
+      "type": "debit",
+      "amount": {
+        "amount": 16455,
+        "currency": "USD"
+      },
+      "description": "Card payment — Smart Axiata",
+      "category": "Telecom",
+      "counterparty": "Smart Axiata",
+      "status": "posted",
+      "bookedAt": "2026-05-14T00:35:49.184Z"
+    },
+    {
+      "id": "txn_acc_1_148",
+      "userId": "usr_1",
+      "accountId": "acc_1",
+      "type": "debit",
+      "amount": {
+        "amount": 446,
+        "currency": "USD"
+      },
+      "description": "Card payment — EDC Electricity",
+      "category": "Utilities",
+      "counterparty": "EDC Electricity",
+      "status": "posted",
+      "bookedAt": "2026-05-12T13:08:08.678Z"
+    },
+    {
+      "id": "txn_acc_1_149",
+      "userId": "usr_1",
+      "accountId": "acc_1",
+      "type": "credit",
+      "amount": {
+        "amount": 28429,
+        "currency": "USD"
+      },
+      "description": "Interest — Interest",
+      "category": "Interest",
+      "counterparty": "Interest",
+      "status": "posted",
+      "bookedAt": "2026-05-12T12:30:05.356Z"
+    },
+    {
+      "id": "txn_acc_4_150",
+      "userId": "usr_1",
+      "accountId": "acc_4",
+      "type": "credit",
+      "amount": {
+        "amount": 17294,
+        "currency": "USD"
+      },
+      "description": "Refund — Refund",
+      "category": "Refund",
+      "counterparty": "Refund",
+      "status": "posted",
+      "bookedAt": "2026-05-11T06:03:16.828Z"
+    },
+    {
+      "id": "txn_acc_1_150",
+      "userId": "usr_1",
+      "accountId": "acc_1",
+      "type": "credit",
+      "amount": {
+        "amount": 325000,
+        "currency": "USD"
+      },
+      "description": "Salary — Acme Co. Payroll",
+      "category": "Salary",
+      "counterparty": "Acme Co. Payroll",
+      "status": "posted",
+      "bookedAt": "2026-05-11T03:08:11.509Z"
+    },
+    {
+      "id": "txn_acc_1_151",
+      "userId": "usr_1",
+      "accountId": "acc_1",
+      "type": "credit",
+      "amount": {
+        "amount": 30984,
+        "currency": "USD"
+      },
+      "description": "Transfer — Transfer from Goal Saver",
+      "category": "Transfer",
+      "counterparty": "Transfer from Goal Saver",
+      "status": "posted",
+      "bookedAt": "2026-05-10T05:10:01.163Z"
+    },
+    {
+      "id": "txn_acc_2_152",
+      "userId": "usr_1",
+      "accountId": "acc_2",
+      "type": "debit",
+      "amount": {
+        "amount": 16199,
+        "currency": "USD"
+      },
+      "description": "Card payment — Aeon Mall",
+      "category": "Shopping",
+      "counterparty": "Aeon Mall",
+      "status": "posted",
+      "bookedAt": "2026-05-09T08:59:23.456Z"
+    },
+    {
+      "id": "txn_acc_1_152",
+      "userId": "usr_1",
+      "accountId": "acc_1",
+      "type": "debit",
+      "amount": {
+        "amount": 11706,
+        "currency": "USD"
+      },
+      "description": "Card payment — Grab",
+      "category": "Transport",
+      "counterparty": "Grab",
+      "status": "posted",
+      "bookedAt": "2026-05-08T16:43:01.599Z"
+    },
+    {
+      "id": "txn_acc_3_152",
+      "userId": "usr_1",
+      "accountId": "acc_3",
+      "type": "credit",
+      "amount": {
+        "amount": 162368200,
+        "currency": "KHR"
+      },
+      "description": "Transfer — Transfer from Goal Saver",
+      "category": "Transfer",
+      "counterparty": "Transfer from Goal Saver",
+      "status": "posted",
+      "bookedAt": "2026-05-08T16:34:00.294Z"
+    },
+    {
+      "id": "txn_acc_1_153",
+      "userId": "usr_1",
+      "accountId": "acc_1",
+      "type": "debit",
+      "amount": {
+        "amount": 12912,
+        "currency": "USD"
+      },
+      "description": "Card payment — Brown Coffee",
+      "category": "Dining",
+      "counterparty": "Brown Coffee",
+      "status": "posted",
+      "bookedAt": "2026-05-07T21:52:04.249Z"
+    },
+    {
+      "id": "txn_acc_1_154",
+      "userId": "usr_1",
+      "accountId": "acc_1",
+      "type": "debit",
+      "amount": {
+        "amount": 3857,
+        "currency": "USD"
+      },
+      "description": "Card payment — Tela Fuel",
+      "category": "Transport",
+      "counterparty": "Tela Fuel",
+      "status": "posted",
+      "bookedAt": "2026-05-06T13:09:00.629Z"
+    },
+    {
+      "id": "txn_acc_1_155",
+      "userId": "usr_1",
+      "accountId": "acc_1",
+      "type": "debit",
+      "amount": {
+        "amount": 4272,
+        "currency": "USD"
+      },
+      "description": "Card payment — Smart Axiata",
+      "category": "Telecom",
+      "counterparty": "Smart Axiata",
+      "status": "posted",
+      "bookedAt": "2026-05-06T07:34:46.663Z"
+    },
+    {
+      "id": "txn_acc_1_156",
+      "userId": "usr_1",
+      "accountId": "acc_1",
+      "type": "debit",
+      "amount": {
+        "amount": 5112,
+        "currency": "USD"
+      },
+      "description": "Card payment — Smart Axiata",
+      "category": "Telecom",
+      "counterparty": "Smart Axiata",
+      "status": "posted",
+      "bookedAt": "2026-05-04T12:57:06.931Z"
+    },
+    {
+      "id": "txn_acc_1_157",
+      "userId": "usr_1",
+      "accountId": "acc_1",
+      "type": "debit",
+      "amount": {
+        "amount": 8183,
+        "currency": "USD"
+      },
+      "description": "Card payment — Royal Phnom Penh Hospital",
+      "category": "Health",
+      "counterparty": "Royal Phnom Penh Hospital",
+      "status": "posted",
+      "bookedAt": "2026-05-03T21:23:27.946Z"
+    },
+    {
+      "id": "txn_acc_1_158",
+      "userId": "usr_1",
+      "accountId": "acc_1",
+      "type": "debit",
+      "amount": {
+        "amount": 11535,
+        "currency": "USD"
+      },
+      "description": "Card payment — Grab",
+      "category": "Transport",
+      "counterparty": "Grab",
+      "status": "posted",
+      "bookedAt": "2026-05-03T12:41:07.246Z"
+    },
+    {
+      "id": "txn_acc_1_159",
+      "userId": "usr_1",
+      "accountId": "acc_1",
+      "type": "debit",
+      "amount": {
+        "amount": 9451,
+        "currency": "USD"
+      },
+      "description": "Card payment — Lucky Supermarket",
+      "category": "Groceries",
+      "counterparty": "Lucky Supermarket",
+      "status": "posted",
+      "bookedAt": "2026-05-02T05:33:35.990Z"
+    },
+    {
+      "id": "txn_acc_1_160",
+      "userId": "usr_1",
+      "accountId": "acc_1",
+      "type": "debit",
+      "amount": {
+        "amount": 5311,
+        "currency": "USD"
+      },
+      "description": "Card payment — Grab",
+      "category": "Transport",
+      "counterparty": "Grab",
+      "status": "posted",
+      "bookedAt": "2026-05-01T04:45:41.175Z"
+    },
+    {
+      "id": "txn_acc_3_160",
+      "userId": "usr_1",
+      "accountId": "acc_3",
+      "type": "debit",
+      "amount": {
+        "amount": 1832700,
+        "currency": "KHR"
+      },
+      "description": "Card payment — EDC Electricity",
+      "category": "Utilities",
+      "counterparty": "EDC Electricity",
+      "status": "posted",
+      "bookedAt": "2026-05-01T02:05:46.560Z"
+    },
+    {
+      "id": "txn_acc_2_160",
+      "userId": "usr_1",
+      "accountId": "acc_2",
+      "type": "credit",
+      "amount": {
+        "amount": 34331,
+        "currency": "USD"
+      },
+      "description": "Salary — Acme Co. Payroll",
+      "category": "Salary",
+      "counterparty": "Acme Co. Payroll",
+      "status": "posted",
+      "bookedAt": "2026-05-01T01:04:11.651Z"
+    },
+    {
+      "id": "txn_acc_1_161",
+      "userId": "usr_1",
+      "accountId": "acc_1",
+      "type": "debit",
+      "amount": {
+        "amount": 11360,
+        "currency": "USD"
+      },
+      "description": "Card payment — Lucky Supermarket",
+      "category": "Groceries",
+      "counterparty": "Lucky Supermarket",
+      "status": "posted",
+      "bookedAt": "2026-04-29T23:32:04.249Z"
+    },
+    {
+      "id": "txn_acc_1_162",
+      "userId": "usr_1",
+      "accountId": "acc_1",
+      "type": "debit",
+      "amount": {
+        "amount": 5521,
+        "currency": "USD"
+      },
+      "description": "Card payment — Grab",
+      "category": "Transport",
+      "counterparty": "Grab",
+      "status": "posted",
+      "bookedAt": "2026-04-29T11:29:38.445Z"
+    },
+    {
+      "id": "txn_acc_1_163",
+      "userId": "usr_1",
+      "accountId": "acc_1",
+      "type": "credit",
+      "amount": {
+        "amount": 59386,
+        "currency": "USD"
+      },
+      "description": "Salary — Acme Co. Payroll",
+      "category": "Salary",
+      "counterparty": "Acme Co. Payroll",
+      "status": "posted",
+      "bookedAt": "2026-04-27T13:48:03.495Z"
+    },
+    {
+      "id": "txn_acc_1_164",
+      "userId": "usr_1",
+      "accountId": "acc_1",
+      "type": "debit",
+      "amount": {
+        "amount": 17118,
+        "currency": "USD"
+      },
+      "description": "Card payment — Lucky Supermarket",
+      "category": "Groceries",
+      "counterparty": "Lucky Supermarket",
+      "status": "posted",
+      "bookedAt": "2026-04-27T10:21:34.729Z"
+    },
+    {
+      "id": "txn_acc_1_165",
+      "userId": "usr_1",
+      "accountId": "acc_1",
+      "type": "debit",
+      "amount": {
+        "amount": 5024,
+        "currency": "USD"
+      },
+      "description": "Card payment — Royal Phnom Penh Hospital",
+      "category": "Health",
+      "counterparty": "Royal Phnom Penh Hospital",
+      "status": "posted",
+      "bookedAt": "2026-04-25T21:41:50.364Z"
+    },
+    {
+      "id": "txn_acc_1_166",
+      "userId": "usr_1",
+      "accountId": "acc_1",
+      "type": "debit",
+      "amount": {
+        "amount": 5458,
+        "currency": "USD"
+      },
+      "description": "Card payment — EDC Electricity",
+      "category": "Utilities",
+      "counterparty": "EDC Electricity",
+      "status": "posted",
+      "bookedAt": "2026-04-24T17:30:05.469Z"
+    },
+    {
+      "id": "txn_acc_1_167",
+      "userId": "usr_1",
+      "accountId": "acc_1",
+      "type": "credit",
+      "amount": {
+        "amount": 28281,
+        "currency": "USD"
+      },
+      "description": "Interest — Interest",
+      "category": "Interest",
+      "counterparty": "Interest",
+      "status": "posted",
+      "bookedAt": "2026-04-24T02:43:54.061Z"
+    },
+    {
+      "id": "txn_acc_2_168",
+      "userId": "usr_1",
+      "accountId": "acc_2",
+      "type": "credit",
+      "amount": {
+        "amount": 41254,
+        "currency": "USD"
+      },
+      "description": "Salary — Acme Co. Payroll",
+      "category": "Salary",
+      "counterparty": "Acme Co. Payroll",
+      "status": "posted",
+      "bookedAt": "2026-04-22T22:36:06.560Z"
+    },
+    {
+      "id": "txn_acc_1_168",
+      "userId": "usr_1",
+      "accountId": "acc_1",
+      "type": "credit",
+      "amount": {
+        "amount": 30605,
+        "currency": "USD"
+      },
+      "description": "Transfer — Transfer from Goal Saver",
+      "category": "Transfer",
+      "counterparty": "Transfer from Goal Saver",
+      "status": "posted",
+      "bookedAt": "2026-04-22T21:43:20.515Z"
+    },
+    {
+      "id": "txn_acc_3_168",
+      "userId": "usr_1",
+      "accountId": "acc_3",
+      "type": "credit",
+      "amount": {
+        "amount": 94615700,
+        "currency": "KHR"
+      },
+      "description": "Interest — Interest",
+      "category": "Interest",
+      "counterparty": "Interest",
+      "status": "posted",
+      "bookedAt": "2026-04-22T19:56:41.552Z"
+    },
+    {
+      "id": "txn_acc_1_169",
+      "userId": "usr_1",
+      "accountId": "acc_1",
+      "type": "debit",
+      "amount": {
+        "amount": 7977,
+        "currency": "USD"
+      },
+      "description": "Card payment — EDC Electricity",
+      "category": "Utilities",
+      "counterparty": "EDC Electricity",
+      "status": "posted",
+      "bookedAt": "2026-04-22T11:50:39.095Z"
+    },
+    {
+      "id": "txn_acc_1_170",
+      "userId": "usr_1",
+      "accountId": "acc_1",
+      "type": "debit",
+      "amount": {
+        "amount": 9731,
+        "currency": "USD"
+      },
+      "description": "Card payment — Grab",
+      "category": "Transport",
+      "counterparty": "Grab",
+      "status": "posted",
+      "bookedAt": "2026-04-21T10:06:23.536Z"
+    },
+    {
+      "id": "txn_acc_1_171",
+      "userId": "usr_1",
+      "accountId": "acc_1",
+      "type": "debit",
+      "amount": {
+        "amount": 13522,
+        "currency": "USD"
+      },
+      "description": "Card payment — Grab",
+      "category": "Transport",
+      "counterparty": "Grab",
+      "status": "posted",
+      "bookedAt": "2026-04-20T04:20:23.905Z"
+    },
+    {
+      "id": "txn_acc_1_172",
+      "userId": "usr_1",
+      "accountId": "acc_1",
+      "type": "debit",
+      "amount": {
+        "amount": 16463,
+        "currency": "USD"
+      },
+      "description": "Card payment — Aeon Mall",
+      "category": "Shopping",
+      "counterparty": "Aeon Mall",
+      "status": "posted",
+      "bookedAt": "2026-04-18T21:09:49.985Z"
+    },
+    {
+      "id": "txn_acc_1_173",
+      "userId": "usr_1",
+      "accountId": "acc_1",
+      "type": "debit",
+      "amount": {
+        "amount": 1845,
+        "currency": "USD"
+      },
+      "description": "Card payment — Royal Phnom Penh Hospital",
+      "category": "Health",
+      "counterparty": "Royal Phnom Penh Hospital",
+      "status": "posted",
+      "bookedAt": "2026-04-17T23:33:07.197Z"
+    },
+    {
+      "id": "txn_acc_1_174",
+      "userId": "usr_1",
+      "accountId": "acc_1",
+      "type": "debit",
+      "amount": {
+        "amount": 7589,
+        "currency": "USD"
+      },
+      "description": "Card payment — Tela Fuel",
+      "category": "Transport",
+      "counterparty": "Tela Fuel",
+      "status": "posted",
+      "bookedAt": "2026-04-16T14:47:11.891Z"
+    },
+    {
+      "id": "txn_acc_1_175",
+      "userId": "usr_1",
+      "accountId": "acc_1",
+      "type": "debit",
+      "amount": {
+        "amount": 17523,
+        "currency": "USD"
+      },
+      "description": "Card payment — Aeon Mall",
+      "category": "Shopping",
+      "counterparty": "Aeon Mall",
+      "status": "posted",
+      "bookedAt": "2026-04-16T12:07:28.517Z"
+    },
+    {
+      "id": "txn_acc_1_176",
+      "userId": "usr_1",
+      "accountId": "acc_1",
+      "type": "debit",
+      "amount": {
+        "amount": 8607,
+        "currency": "USD"
+      },
+      "description": "Card payment — Grab",
+      "category": "Transport",
+      "counterparty": "Grab",
+      "status": "posted",
+      "bookedAt": "2026-04-15T09:50:06.235Z"
+    },
+    {
+      "id": "txn_acc_3_176",
+      "userId": "usr_1",
+      "accountId": "acc_3",
+      "type": "credit",
+      "amount": {
+        "amount": 13435700,
+        "currency": "KHR"
+      },
+      "description": "Salary — Acme Co. Payroll",
+      "category": "Salary",
+      "counterparty": "Acme Co. Payroll",
+      "status": "posted",
+      "bookedAt": "2026-04-14T21:52:37.364Z"
+    },
+    {
+      "id": "txn_acc_2_176",
+      "userId": "usr_1",
+      "accountId": "acc_2",
+      "type": "credit",
+      "amount": {
+        "amount": 36072,
+        "currency": "USD"
+      },
+      "description": "Interest — Interest",
+      "category": "Interest",
+      "counterparty": "Interest",
+      "status": "posted",
+      "bookedAt": "2026-04-14T13:58:28.396Z"
+    },
+    {
+      "id": "txn_acc_1_177",
+      "userId": "usr_1",
+      "accountId": "acc_1",
+      "type": "debit",
+      "amount": {
+        "amount": 2741,
+        "currency": "USD"
+      },
+      "description": "Card payment — Tela Fuel",
+      "category": "Transport",
+      "counterparty": "Tela Fuel",
+      "status": "posted",
+      "bookedAt": "2026-04-14T09:31:50.706Z"
+    },
+    {
+      "id": "txn_acc_1_178",
+      "userId": "usr_1",
+      "accountId": "acc_1",
+      "type": "debit",
+      "amount": {
+        "amount": 8786,
+        "currency": "USD"
+      },
+      "description": "Card payment — Tela Fuel",
+      "category": "Transport",
+      "counterparty": "Tela Fuel",
+      "status": "posted",
+      "bookedAt": "2026-04-12T18:52:02.749Z"
+    },
+    {
+      "id": "txn_acc_1_179",
+      "userId": "usr_1",
+      "accountId": "acc_1",
+      "type": "debit",
+      "amount": {
+        "amount": 9207,
+        "currency": "USD"
+      },
+      "description": "Card payment — Lucky Supermarket",
+      "category": "Groceries",
+      "counterparty": "Lucky Supermarket",
+      "status": "posted",
+      "bookedAt": "2026-04-11T19:02:33.373Z"
+    }
+  ],
+  "loans": [
+    {
+      "id": "loan_baf69ae1",
+      "userId": "usr_1",
+      "reference": "LN-2026-0001",
+      "product": "home",
+      "principal": {
+        "amount": 8500000,
+        "currency": "USD"
+      },
+      "annualRate": 0.075,
+      "termMonths": 240,
+      "monthlyPayment": {
+        "amount": 68475,
+        "currency": "USD"
+      },
+      "outstanding": {
+        "amount": 6970000,
+        "currency": "USD"
+      },
+      "purpose": "Purchase of a townhouse in Sen Sok",
+      "status": "disbursed",
+      "createdAt": "2025-08-14T12:42:37.679Z",
+      "updatedAt": "2026-06-25T12:42:37.679Z",
+      "history": [
+        {
+          "status": "submitted",
+          "at": "2025-08-14T12:42:37.679Z"
+        },
+        {
+          "status": "under_review",
+          "at": "2025-11-27T12:42:37.679Z"
+        },
+        {
+          "status": "approved",
+          "at": "2026-03-12T12:42:37.679Z"
+        },
+        {
+          "status": "disbursed",
+          "at": "2026-06-25T12:42:37.679Z"
+        }
+      ]
+    },
+    {
+      "id": "loan_bcaf11b5",
+      "userId": "usr_1",
+      "reference": "LN-2026-0002",
+      "product": "auto",
+      "principal": {
+        "amount": 1850000,
+        "currency": "USD"
+      },
+      "annualRate": 0.089,
+      "termMonths": 60,
+      "monthlyPayment": {
+        "amount": 38313,
+        "currency": "USD"
+      },
+      "outstanding": {
+        "amount": 0,
+        "currency": "USD"
+      },
+      "purpose": "Hybrid vehicle for family use",
+      "status": "approved",
+      "createdAt": "2026-09-26T12:42:37.679Z",
+      "updatedAt": "2026-10-04T12:42:37.679Z",
+      "history": [
+        {
+          "status": "submitted",
+          "at": "2026-09-26T12:42:37.679Z"
+        },
+        {
+          "status": "under_review",
+          "at": "2026-09-30T12:42:37.679Z"
+        },
+        {
+          "status": "approved",
+          "at": "2026-10-04T12:42:37.679Z"
+        }
+      ]
+    },
+    {
+      "id": "loan_5559adce",
+      "userId": "usr_1",
+      "reference": "LN-2026-0003",
+      "product": "personal",
+      "principal": {
+        "amount": 400000,
+        "currency": "USD"
+      },
+      "annualRate": 0.115,
+      "termMonths": 24,
+      "monthlyPayment": {
+        "amount": 18736,
+        "currency": "USD"
+      },
+      "outstanding": {
+        "amount": 0,
+        "currency": "USD"
+      },
+      "purpose": "Home renovation and new furniture",
+      "status": "under_review",
+      "createdAt": "2026-10-04T12:42:37.679Z",
+      "updatedAt": "2026-10-06T12:42:37.679Z",
+      "history": [
+        {
+          "status": "submitted",
+          "at": "2026-10-04T12:42:37.679Z"
+        },
+        {
+          "status": "under_review",
+          "at": "2026-10-06T12:42:37.679Z"
+        }
+      ]
+    },
+    {
+      "id": "loan_e873578c",
+      "userId": "usr_1",
+      "reference": "LN-2026-0004",
+      "product": "business",
+      "principal": {
+        "amount": 3000000,
+        "currency": "USD"
+      },
+      "annualRate": 0.099,
+      "termMonths": 36,
+      "monthlyPayment": {
+        "amount": 96661,
+        "currency": "USD"
+      },
+      "outstanding": {
+        "amount": 0,
+        "currency": "USD"
+      },
+      "purpose": "Working capital for a coffee shop",
+      "status": "submitted",
+      "createdAt": "2026-10-07T12:42:37.679Z",
+      "updatedAt": "2026-10-07T12:42:37.679Z",
+      "history": [
+        {
+          "status": "submitted",
+          "at": "2026-10-07T12:42:37.679Z"
+        }
+      ]
+    },
+    {
+      "id": "loan_e9485ed5",
+      "userId": "usr_1",
+      "reference": "LN-2026-0005",
+      "product": "personal",
+      "principal": {
+        "amount": 1500000,
+        "currency": "USD"
+      },
+      "annualRate": 0.115,
+      "termMonths": 12,
+      "monthlyPayment": {
+        "amount": 132923,
+        "currency": "USD"
+      },
+      "outstanding": {
+        "amount": 0,
+        "currency": "USD"
+      },
+      "purpose": "Debt consolidation of credit cards",
+      "status": "rejected",
+      "createdAt": "2026-07-10T12:42:37.679Z",
+      "updatedAt": "2026-09-08T12:42:37.679Z",
+      "history": [
+        {
+          "status": "submitted",
+          "at": "2026-07-10T12:42:37.679Z"
+        },
+        {
+          "status": "under_review",
+          "at": "2026-08-09T12:42:37.679Z"
+        },
+        {
+          "status": "rejected",
+          "at": "2026-09-08T12:42:37.679Z"
+        }
+      ]
+    }
+  ],
+  "creditScores": {
+    "usr_1": {
+      "current": 733,
+      "band": "Good",
+      "updatedAt": "2026-10-05T12:42:37.679Z",
+      "history": [
+        {
+          "month": "2025-11",
+          "score": 688
+        },
+        {
+          "month": "2025-12",
+          "score": 698
+        },
+        {
+          "month": "2026-01",
+          "score": 703
+        },
+        {
+          "month": "2026-02",
+          "score": 703
+        },
+        {
+          "month": "2026-03",
+          "score": 702
+        },
+        {
+          "month": "2026-04",
+          "score": 705
+        },
+        {
+          "month": "2026-05",
+          "score": 714
+        },
+        {
+          "month": "2026-06",
+          "score": 724
+        },
+        {
+          "month": "2026-07",
+          "score": 731
+        },
+        {
+          "month": "2026-08",
+          "score": 732
+        },
+        {
+          "month": "2026-09",
+          "score": 731
+        },
+        {
+          "month": "2026-10",
+          "score": 733
+        }
+      ],
+      "factors": [
+        {
+          "label": "Payment history",
+          "impact": "positive",
+          "detail": "100% of repayments on time in the last 24 months."
+        },
+        {
+          "label": "Credit utilisation",
+          "impact": "neutral",
+          "detail": "You are using 34% of available credit. Below 30% is ideal."
+        },
+        {
+          "label": "Length of credit history",
+          "impact": "positive",
+          "detail": "Your oldest account is 7 years old."
+        },
+        {
+          "label": "Recent applications",
+          "impact": "negative",
+          "detail": "2 loan applications in the last 30 days."
+        }
+      ]
+    }
+  }
+}

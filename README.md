@@ -109,6 +109,17 @@ docs/adr/                # Architecture decision records
 | `pnpm test:e2e`                                | Playwright on the production builds, desktop + mobile (run `pnpm build` first) |
 | `pnpm docker:up`                               | Production images via Docker Compose (needs `.env`, see `.env.example`)        |
 
+## Mock data
+
+All demo data lives in [`apps/shell/server/data/mock-data.json`](apps/shell/server/data/mock-data.json):
+users, accounts, transactions, loans and credit scores. Edit it and restart the shell to change the demo.
+
+- Amounts are integer **minor units** (cents), e.g. `{ "amount": 1284550, "currency": "USD" }` is $12,845.50.
+- On startup every timestamp is shifted by the time elapsed since `snapshotAt`, so the newest data is always
+  "today" and the 6-month charts never go empty.
+- Full account numbers stay on the server; the API only returns masked numbers.
+- The demo password is stored as a salted scrypt hash (`passwordSalt` / `passwordHash`).
+
 ## Security
 
 | Threat                            | Mitigation                                                                                                                                                                                                                           |

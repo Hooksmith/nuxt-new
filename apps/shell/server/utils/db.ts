@@ -1,13 +1,12 @@
 import { randomUUID, scryptSync, timingSafeEqual } from 'node:crypto'
+import mockData from '../data/mock-data.json'
 import {
   KHR_PER_USD,
   LOAN_PRODUCTS,
   canTransition,
-  creditBand,
   maskAccountNumber,
   monthlyPayment,
   type Account,
-  type AccountType,
   type CashflowPoint,
   type CreditScore,
   type Currency,
@@ -44,141 +43,78 @@ interface LoanRecord extends Loan {
   userId: string
 }
 
-// Deterministic PRNG so every replica / restart produces the same demo data.
-function mulberry32(seed: number) {
-  return () => {
-    seed |= 0
-    seed = (seed + 0x6d2b79f5) | 0
-    let t = Math.imul(seed ^ (seed >>> 15), 1 | seed)
-    t = (t + Math.imul(t ^ (t >>> 7), 61 | t)) ^ t
-    return ((t ^ (t >>> 14)) >>> 0) / 4294967296
-  }
+type TransactionRecord = Transaction & { userId: string }
+
+interface SeedData {
+  /** When the snapshot was taken; all timestamps are shifted relative to it on boot. */
+  snapshotAt: string
+  users: UserRecord[]
+  accounts: AccountRecord[]
+  transactions: TransactionRecord[]
+  loans: LoanRecord[]
+  creditScores: Record<string, CreditScore>
 }
-const random = mulberry32(20261008)
-const pick = <T>(items: readonly T[]): T => items[Math.floor(random() * items.length)]!
-const between = (min: number, max: number) => Math.round(min + random() * (max - min))
 
 function hashPassword(password: string, salt: string) {
   return scryptSync(password, salt, 32).toString('hex')
 }
 
-const now = new Date()
-const daysAgo = (days: number) => new Date(now.getTime() - days * 86_400_000).toISOString()
-const monthKey = (date: Date) => `${date.getUTCFullYear()}-${String(date.getUTCMonth() + 1).padStart(2, '0')}`
-
-// ---------------------------------------------------------------------------
-// Seed data
-// ---------------------------------------------------------------------------
-
 export const DEMO_CREDENTIALS = { email: 'demo@bank.test', password: 'Password123!' } as const
 
-const demoSalt = 'demo-salt-not-for-production'
-const users: UserRecord[] = [
-  {
-    id: 'usr_1',
-    name: 'Dara Sok',
-    email: DEMO_CREDENTIALS.email,
-    segment: 'premier',
-    customerSince: '2019-04-12',
-    passwordSalt: demoSalt,
-    passwordHash: hashPassword(DEMO_CREDENTIALS.password, demoSalt),
-  },
-]
+// ---------------------------------------------------------------------------
+// Seed data — loaded from server/data/mock-data.json (edit that file to change the demo).
+// Timestamps are rebased so the newest data is always "today" and charts never go stale.
+// ---------------------------------------------------------------------------
 
-const accounts: AccountRecord[] = [
-  account('acc_1', 'Everyday Checking', 'checking', '0012 3456 7890', 'USD', 1_284_550),
-  account('acc_2', 'Goal Saver', 'savings', '0012 3456 4821', 'USD', 4_520_000),
-  account('acc_3', 'Riel Savings', 'savings', '0045 1188 2093', 'KHR', 1_850_000_000),
-  account('acc_4', '12-Month Term Deposit', 'term_deposit', '0090 7731 5566', 'USD', 10_000_000),
-]
+const seed = structuredClone(mockData) as unknown as SeedData
+const now = new Date()
+const shiftMs = now.getTime() - Date.parse(seed.snapshotAt)
+const snapshot = new Date(seed.snapshotAt)
+const shiftMonths =
+  (now.getUTCFullYear() - snapshot.getUTCFullYear()) * 12 + (now.getUTCMonth() - snapshot.getUTCMonth())
 
-function account(
-  id: string,
-  name: string,
-  type: AccountType,
-  number: string,
-  currency: Currency,
-  balance: number,
-): AccountRecord {
-  const held = type === 'checking' ? 12_500 : 0
-  return {
-    id,
-    userId: 'usr_1',
-    name,
-    type,
-    number,
-    balance: { amount: balance, currency },
-    availableBalance: { amount: balance - held, currency },
-    status: 'active',
-    openedAt: '2019-04-12T00:00:00.000Z',
-  }
+const shiftDate = (iso: string) => new Date(Date.parse(iso) + shiftMs).toISOString()
+const monthKey = (date: Date) => `${date.getUTCFullYear()}-${String(date.getUTCMonth() + 1).padStart(2, '0')}`
+const shiftMonth = (key: string) => {
+  const [year, month] = key.split('-').map(Number)
+  return monthKey(new Date(Date.UTC(year!, month! - 1 + shiftMonths, 1)))
 }
 
-const merchants: Record<'debit' | 'credit', readonly (readonly [string, string])[]> = {
-  debit: [
-    ['Lucky Supermarket', 'Groceries'],
-    ['Brown Coffee', 'Dining'],
-    ['EDC Electricity', 'Utilities'],
-    ['Smart Axiata', 'Telecom'],
-    ['Grab', 'Transport'],
-    ['Aeon Mall', 'Shopping'],
-    ['Tela Fuel', 'Transport'],
-    ['Royal Phnom Penh Hospital', 'Health'],
-  ],
-  credit: [
-    ['Acme Co. Payroll', 'Salary'],
-    ['Transfer from Goal Saver', 'Transfer'],
-    ['Interest', 'Interest'],
-    ['Refund', 'Refund'],
-  ],
-}
+const users = seed.users
+const accounts = seed.accounts
+const transactions = seed.transactions.map((t) => ({ ...t, bookedAt: shiftDate(t.bookedAt) }))
+const loans = seed.loans.map((l) => ({
+  ...l,
+  createdAt: shiftDate(l.createdAt),
+  updatedAt: shiftDate(l.updatedAt),
+  history: l.history.map((h) => ({ ...h, at: shiftDate(h.at) })),
+}))
+const creditScores = Object.fromEntries(
+  Object.entries(seed.creditScores).map(([userId, score]) => [
+    userId,
+    {
+      ...score,
+      updatedAt: shiftDate(score.updatedAt),
+      history: score.history.map((p) => ({ ...p, month: shiftMonth(p.month) })),
+    },
+  ]),
+)
 
-const transactions: (Transaction & { userId: string })[] = []
-for (const acc of accounts) {
-  const perMonth = acc.type === 'checking' ? 24 : acc.type === 'savings' ? 4 : 1
-  const scale = acc.balance.currency === 'KHR' ? KHR_PER_USD : 1
-  for (let day = 0; day < 180; day += Math.max(1, Math.round(30 / perMonth))) {
-    const isSalary = acc.type === 'checking' && day % 30 === 0
-    const type = isSalary || random() < (acc.type === 'checking' ? 0.15 : 0.6) ? 'credit' : 'debit'
-    const [counterparty, category] = isSalary ? merchants.credit[0]! : pick(merchants[type])
-    const amountUsd = isSalary ? 3_250_00 : type === 'credit' ? between(2_000, 60_000) : between(350, 18_000)
-    transactions.push({
-      id: `txn_${acc.id}_${day}`,
-      userId: acc.userId,
-      accountId: acc.id,
-      type,
-      amount: { amount: amountUsd * scale, currency: acc.balance.currency },
-      description: type === 'credit' ? `${category} — ${counterparty}` : `Card payment — ${counterparty}`,
-      category,
-      counterparty,
-      status: day < 2 && type === 'debit' ? 'pending' : 'posted',
-      bookedAt: daysAgo(day + random()),
-    })
-  }
-}
-transactions.sort((a, b) => b.bookedAt.localeCompare(a.bookedAt))
-
-let loanSequence = 0
-const loans: LoanRecord[] = []
+let loanSequence = Math.max(0, ...loans.map((l) => Number(l.reference.split('-').at(-1)) || 0))
 
 function nextReference() {
   loanSequence += 1
   return `LN-${now.getUTCFullYear()}-${String(loanSequence).padStart(4, '0')}`
 }
 
+/** Builds a new application (used for customer submissions and the demo simulator). */
 function buildLoan(
   userId: string,
   input: { product: LoanProduct; amount: number; termMonths: number; purpose: string },
-  path: LoanStatus[],
-  ageDays: number,
 ): LoanRecord {
   const { annualRate } = LOAN_PRODUCTS[input.product]
   const principal = input.amount * 100
-  const history = path.map((status, index) => ({
-    status,
-    at: daysAgo(ageDays - index * Math.max(1, Math.floor(ageDays / path.length))),
-  }))
-  const status = path.at(-1)!
+  const at = new Date().toISOString()
   return {
     id: `loan_${randomUUID().slice(0, 8)}`,
     userId,
@@ -188,47 +124,14 @@ function buildLoan(
     annualRate,
     termMonths: input.termMonths,
     monthlyPayment: { amount: monthlyPayment(principal, annualRate, input.termMonths), currency: 'USD' },
-    outstanding: { amount: status === 'disbursed' ? Math.round(principal * 0.82) : 0, currency: 'USD' },
+    outstanding: { amount: 0, currency: 'USD' },
     purpose: input.purpose,
-    status,
-    createdAt: history[0]!.at,
-    updatedAt: history.at(-1)!.at,
-    history,
+    status: 'submitted',
+    createdAt: at,
+    updatedAt: at,
+    history: [{ status: 'submitted', at }],
   }
 }
-
-loans.push(
-  buildLoan(
-    'usr_1',
-    { product: 'home', amount: 85_000, termMonths: 240, purpose: 'Purchase of a townhouse in Sen Sok' },
-    ['submitted', 'under_review', 'approved', 'disbursed'],
-    420,
-  ),
-  buildLoan(
-    'usr_1',
-    { product: 'auto', amount: 18_500, termMonths: 60, purpose: 'Hybrid vehicle for family use' },
-    ['submitted', 'under_review', 'approved'],
-    12,
-  ),
-  buildLoan(
-    'usr_1',
-    { product: 'personal', amount: 4_000, termMonths: 24, purpose: 'Home renovation and new furniture' },
-    ['submitted', 'under_review'],
-    4,
-  ),
-  buildLoan(
-    'usr_1',
-    { product: 'business', amount: 30_000, termMonths: 36, purpose: 'Working capital for a coffee shop' },
-    ['submitted'],
-    1,
-  ),
-  buildLoan(
-    'usr_1',
-    { product: 'personal', amount: 15_000, termMonths: 12, purpose: 'Debt consolidation of credit cards' },
-    ['submitted', 'under_review', 'rejected'],
-    90,
-  ),
-)
 
 // ---------------------------------------------------------------------------
 // Queries (every lookup is scoped to the user to prevent IDOR)
@@ -303,7 +206,7 @@ export function getLoan(userId: string, loanId: string): Loan | undefined {
 }
 
 export function createLoan(userId: string, application: LoanApplication): Loan {
-  const record = buildLoan(userId, application, ['submitted'], 0)
+  const record = buildLoan(userId, application)
   loans.push(record)
   return toLoan(record)
 }
@@ -339,28 +242,9 @@ export function activeLoanIds(): string[] {
   return loans.filter((l) => ['submitted', 'under_review', 'approved'].includes(l.status)).map((l) => l.id)
 }
 
-export function getCreditScore(_userId: string): CreditScore {
-  const history = Array.from({ length: 12 }, (_, i) => {
-    const date = new Date(Date.UTC(now.getUTCFullYear(), now.getUTCMonth() - (11 - i), 1))
-    return { month: monthKey(date), score: 688 + Math.round(i * 4.6 + Math.sin(i) * 6) }
-  })
-  const current = history.at(-1)!.score
-  return {
-    current,
-    band: creditBand(current),
-    updatedAt: daysAgo(3),
-    history,
-    factors: [
-      { label: 'Payment history', impact: 'positive', detail: '100% of repayments on time in the last 24 months.' },
-      {
-        label: 'Credit utilisation',
-        impact: 'neutral',
-        detail: 'You are using 34% of available credit. Below 30% is ideal.',
-      },
-      { label: 'Length of credit history', impact: 'positive', detail: 'Your oldest account is 7 years old.' },
-      { label: 'Recent applications', impact: 'negative', detail: '2 loan applications in the last 30 days.' },
-    ],
-  }
+export function getCreditScore(userId: string): CreditScore | undefined {
+  const score = creditScores[userId]
+  return score ? structuredClone(score) : undefined
 }
 
 function toUsdMinor(amount: number, currency: Currency) {
@@ -404,13 +288,13 @@ export function getPortfolio(
 
 /** Keeps the demo alive: when every loan is settled, a new application arrives. */
 export function seedIncomingApplication(): { userId: string; loan: Loan } {
-  const product = pick(['personal', 'auto', 'business'] as const)
-  const record = buildLoan(
-    'usr_1',
-    { product, amount: between(20, 120) * 100, termMonths: 24, purpose: 'Auto-generated demo application' },
-    ['submitted'],
-    0,
-  )
+  const products = ['personal', 'auto', 'business'] as const
+  const record = buildLoan('usr_1', {
+    product: products[Math.floor(Math.random() * products.length)]!,
+    amount: (20 + Math.floor(Math.random() * 100)) * 100,
+    termMonths: 24,
+    purpose: 'Auto-generated demo application',
+  })
   loans.push(record)
   return { userId: record.userId, loan: toLoan(record) }
 }

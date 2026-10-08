@@ -58,7 +58,11 @@ export interface GraphQLContext {
 
 export const rootValue = {
   portfolio: (_args: unknown, context: GraphQLContext) => getPortfolio(context.user.id),
-  creditScore: (_args: unknown, context: GraphQLContext) => getCreditScore(context.user.id),
+  creditScore: (_args: unknown, context: GraphQLContext) => {
+    const score = getCreditScore(context.user.id)
+    if (!score) throw new GraphQLError('No credit report on file')
+    return score
+  },
 }
 
 function selectionDepth(selectionSet: SelectionSetNode | undefined, depth: number): number {
