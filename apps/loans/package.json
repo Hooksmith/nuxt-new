@@ -15,7 +15,7 @@
     "@bank/base": "workspace:*",
     "@pinia/nuxt": "^1.0.2",
     "@tanstack/vue-query": "^5.104.1",
-    "nuxt": "~4.5.2",
+    "nuxt": "~4.6.1",
     "nuxt-security": "^2.6.0",
     "pinia": "^4.0.3",
     "ufo": "^1.6.4",
