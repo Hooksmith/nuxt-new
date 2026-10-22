@@ -18,7 +18,7 @@
     "ufo": "^1.6.4",
     "vee-validate": "^4.15.1",
     "vue": "^3.5.43",
-    "zod": "^4.6.5"
+    "zod": "^4.6.7"
   },
   "devDependencies": {
     "@vitest/coverage-v8": "^5.0.3",
