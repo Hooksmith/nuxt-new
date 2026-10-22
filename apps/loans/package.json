@@ -13,14 +13,14 @@
   },
   "dependencies": {
     "@bank/base": "workspace:*",
-    "@pinia/nuxt": "^1.0.2",
+    "@pinia/nuxt": "^1.0.3",
     "@tanstack/vue-query": "^5.104.1",
     "nuxt": "~4.5.2",
     "nuxt-security": "^2.6.0",
-    "pinia": "^4.0.3",
+    "pinia": "^4.1.0",
     "ufo": "^1.6.4",
     "vee-validate": "^4.15.1",
-    "vue": "^3.5.43",
+    "vue": "^3.5.44",
     "zod": "^4.6.5"
   },
   "devDependencies": {
