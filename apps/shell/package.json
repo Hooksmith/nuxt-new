@@ -18,7 +18,7 @@
     "chart.js": "^4.5.1",
     "graphql": "^16.14.2",
     "h3": "^1.15.11",
-    "nuxt": "~4.5.2",
+    "nuxt": "~4.6.2",
     "nuxt-security": "^2.6.0",
     "pinia": "^4.0.3",
     "ufo": "^1.6.4",
@@ -28,7 +28,7 @@
     "zod": "^4.6.5"
   },
   "devDependencies": {
-    "@nuxt/test-utils": "^4.3.3",
+    "@nuxt/test-utils": "^4.3.4",
     "@vitest/coverage-v8": "^5.0.3",
     "@vue/test-utils": "^2.5.1",
     "happy-dom": "^20.14.5",
