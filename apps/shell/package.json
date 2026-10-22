@@ -14,7 +14,7 @@
   "dependencies": {
     "@bank/base": "workspace:*",
     "@pinia/nuxt": "^1.0.2",
-    "@tanstack/vue-query": "^5.104.1",
+    "@tanstack/vue-query": "^5.104.4",
     "chart.js": "^4.5.1",
     "graphql": "^16.14.2",
     "h3": "^1.15.11",
